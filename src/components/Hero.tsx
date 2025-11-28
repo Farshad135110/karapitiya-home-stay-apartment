@@ -1,0 +1,136 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { ChevronDown, MapPin, Star, Sparkles } from 'lucide-react'
+
+export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600"
+    >
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 py-32 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Logo Badge */}
+          <div
+            className={`inline-flex items-center justify-center mb-8 transform transition-all duration-700 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-white p-3 shadow-2xl">
+              <img 
+                src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" 
+                alt="Karapitiya Home Stay Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Main Heading */}
+          <h1
+            className={`text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight transform transition-all duration-700 delay-100 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            Karapitiya Home Stay
+            <span className="block text-accent-400 mt-2">Apartment</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className={`text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto transform transition-all duration-700 delay-200 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            Your Home Away from Home Near{' '}
+            <span className="font-semibold text-white">Karapitiya Teaching Hospital</span>, Galle
+          </p>
+
+          {/* Location Badge */}
+          <div
+            className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-10 transform transition-all duration-700 delay-300 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            <MapPin className="w-5 h-5 text-accent-400" />
+            <span>5 minutes from Karapitiya National Hospital</span>
+            <div className="flex items-center ml-4">
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              <span className="ml-1 font-semibold">4.9</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div
+            className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 transform transition-all duration-700 delay-400 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            <a
+              href="https://www.airbnb.com/h/rnrfamily"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-accent-500 to-accent-600 rounded-full overflow-hidden shadow-2xl hover:shadow-accent-500/50 transform hover:scale-105 transition-all"
+            >
+              <span className="relative z-10 flex items-center">
+                Book Now on Airbnb
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-accent-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-primary-800 transition-all"
+            >
+              Contact Us
+            </a>
+          </div>
+
+          {/* Features Grid */}
+          <div
+            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto transform transition-all duration-700 delay-500 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            {[
+              { title: 'Modern Facilities', desc: 'Fully equipped kitchen, WiFi, AC' },
+              { title: 'Prime Location', desc: '5 min ride to Karapitiya Hospital' },
+              { title: 'Student Friendly', desc: 'Perfect for medical electives' },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:scale-105"
+              >
+                <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
+                <p className="text-gray-200 text-sm">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <a
+        href="#about"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <ChevronDown className="w-8 h-8 text-white" />
+      </a>
+    </section>
+  )
+}
