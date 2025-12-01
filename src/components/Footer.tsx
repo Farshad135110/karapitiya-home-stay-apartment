@@ -111,19 +111,19 @@ export default function Footer() {
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-400 flex-shrink-0" />
                 <a
-                  href="tel:+94xxxxxxxxx"
+                  href="tel:+94759597703"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  +94 XX XXX XXXX
+                  +94 75 959 7703
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
                 <a
-                  href="mailto:info@karapitiyahomestay.com"
+                  href="mailto:rnr.residance@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  info@karapitiyahomestay.com
+                  rnr.residance@gmail.com
                 </a>
               </li>
             </ul>

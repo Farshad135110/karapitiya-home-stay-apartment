@@ -27,7 +27,7 @@ export default function About() {
   const stats = [
     { icon: Building2, value: '3', label: 'Rooms Available' },
     { icon: Users, value: '50+', label: 'Medical Students' },
-    { icon: Award, value: '4.9', label: 'Rating' },
+    { icon: Award, value: '5.0', label: 'Airbnb Rating' },
     { icon: Heart, value: '5 min', label: 'From Hospital' },
   ]
 
@@ -61,7 +61,7 @@ export default function About() {
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               }`}
             >
-              <div className="relative h-[350px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl sticky top-24">
+              <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-24">
                 <img
                   src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368306/exterior_y9duym.avif"
                   alt="Karapitiya Home Stay Apartment Exterior"
@@ -87,9 +87,6 @@ export default function About() {
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Private Stay for Medical Electives Near Karapitiya Hospital
-              </h3>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                 <p>
                   Perfectly tailored for <span className="font-semibold text-accent-600">overseas medical students, visiting faculty, and researchers</span>. Located just a{' '}
@@ -101,9 +98,6 @@ export default function About() {
                 </p>
                 <p>
                   This is a <span className="font-semibold text-primary-600">very peaceful place</span>, ensuring you have the privacy, quiet, and concentration needed for studying and research. We understand the demanding schedule of medical training and provide a comfortable environment where you can rest, focus, and feel at home.
-                </p>
-                <p className="text-gray-600 italic border-l-4 border-primary-500 pl-4">
-                  Entire floor with separate entrance • Third party not allowed • Perfect for medical professionals
                 </p>
               </div>
 
@@ -141,7 +135,7 @@ export default function About() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-gray-700">Entire floor with separate entrance</p>
+                    <p className="text-gray-700">AC, hot water & appliances</p>
                   </div>
                   <div className="flex items-start space-x-2">
                     <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
@@ -149,35 +143,14 @@ export default function About() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-gray-700">AC, hot water, microwave, fridge</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Gas cooker, washing machine & more</p>
+                    <p className="text-gray-700">Washing machine & complete amenities</p>
                   </div>
                 </div>
-              </div>
-
-              {/* CTA Button */}
-              <div className="mt-8">
-                <a
-                  href="#airbnb"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-                >
-                  <span>Book Your Stay Now</span>
-                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Stats Grid */}
           <div
             className={`grid grid-cols-2 md:grid-cols-4 gap-6 transform transition-all duration-700 delay-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'

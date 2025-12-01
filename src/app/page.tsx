@@ -1,4 +1,6 @@
 import Hero from '@/components/Hero'
+import Homes from '@/components/Homes'
+import SuperhostBanner from '@/components/SuperhostBanner'
 import About from '@/components/About'
 import Facilities from '@/components/Facilities'
 import Gallery from '@/components/Gallery'
@@ -14,6 +16,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <Homes />
+      <SuperhostBanner />
       <About />
       <Facilities />
       <Gallery />

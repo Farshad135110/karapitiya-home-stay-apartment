@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Star, Quote } from 'lucide-react'
+import { Star, Quote, ExternalLink } from 'lucide-react'
 
 export default function Reviews() {
   const [isVisible, setIsVisible] = useState(false)
@@ -42,9 +42,17 @@ export default function Reviews() {
       date: 'October 2025',
     },
     {
+      name: 'Julian',
+      role: 'Medical Student from Germany',
+      avatar: 'https://placehold.co/100x100/8b5cf6/white?text=J',
+      rating: 5,
+      text: 'A great accommodation in a central yet very quiet location in Galle. Clean and equipped with everything you need (kitchen, washing machine, bedroom with ACs…). The accommodation was already recommended to me by a friend, and I was completely satisfied as well. Suhail is very attentive and helpful. He regularly checks in to see if everything is okay, and you can tell that he genuinely cares about making sure you feel comfortable. I stayed in the apartment for an extended period during my medical elective appointment in Karapitiya. It takes only 10 minutes to get to both the clinic and the beach. With all that in mind, I can definitely recommend the accommodation!',
+      date: 'March 2025',
+    },
+    {
       name: 'Dr. Sarah Johnson',
       role: 'Medical Student from UK',
-      avatar: 'https://placehold.co/100x100/8b5cf6/white?text=SJ',
+      avatar: 'https://placehold.co/100x100/10b981/white?text=SJ',
       rating: 5,
       text: 'Perfect location for medical students! Just a short ride to Karapitiya Hospital. The apartment is clean, modern, and has everything we need. The host is very responsive and helpful.',
       date: 'October 2024',
@@ -52,7 +60,7 @@ export default function Reviews() {
     {
       name: 'Kumar Patel',
       role: 'Medical Intern',
-      avatar: 'https://placehold.co/100x100/10b981/white?text=KP',
+      avatar: 'https://placehold.co/100x100/ec4899/white?text=KP',
       rating: 5,
       text: 'Excellent accommodation with all amenities. The WiFi is fast which is crucial for my online lectures. Close to the hospital and local restaurants. Highly recommend for medical students!',
       date: 'September 2024',
@@ -60,7 +68,7 @@ export default function Reviews() {
     {
       name: 'Emma Williams',
       role: 'Foreign Medical Graduate',
-      avatar: 'https://placehold.co/100x100/ec4899/white?text=EW',
+      avatar: 'https://placehold.co/100x100/f59e0b/white?text=EW',
       rating: 5,
       text: 'I stayed here for 3 months during my clinical rotation. The apartment is spacious, comfortable, and in a safe neighborhood. Perfect for medical professionals!',
       date: 'August 2024',
@@ -68,7 +76,7 @@ export default function Reviews() {
     {
       name: 'Ahmed Hassan',
       role: 'Medical Student',
-      avatar: 'https://placehold.co/100x100/f59e0b/white?text=AH',
+      avatar: 'https://placehold.co/100x100/06b6d4/white?text=AH',
       rating: 5,
       text: 'Best homestay in Galle! The kitchen is fully equipped, rooms are comfortable with AC, and the location is unbeatable. The host made sure we had everything we needed.',
       date: 'November 2024',
@@ -76,8 +84,8 @@ export default function Reviews() {
   ]
 
   const stats = {
-    averageRating: '4.9',
-    totalReviews: '50+',
+    averageRating: '5.0',
+    totalReviews: '24+',
     responseRate: '100%',
     responseTime: '< 1 hour',
   }
@@ -107,7 +115,7 @@ export default function Reviews() {
 
           {/* Stats Bar */}
           <div
-            className={`grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 transform transition-all duration-700 ${
+            className={`grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 transform transition-all duration-700 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -132,9 +140,9 @@ export default function Reviews() {
             </div>
           </div>
 
-          {/* Reviews Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-            {reviews.map((review, index) => (
+          {/* Reviews Grid - 3 in a Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {reviews.slice(0, 3).map((review, index) => (
               <div
                 key={index}
                 className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 transform ${
@@ -168,27 +176,32 @@ export default function Reviews() {
                   ))}
                 </div>
 
-                <p className="text-gray-700 leading-relaxed mb-4">{review.text}</p>
+                <p className="text-gray-700 leading-relaxed mb-4 line-clamp-6">{review.text}</p>
 
                 <p className="text-sm text-gray-500 font-medium">{review.date}</p>
               </div>
             ))}
           </div>
 
-          {/* CTA */}
+          {/* View All Reviews Button */}
           <div
-            className={`text-center transform transition-all duration-700 delay-500 ${
+            className={`text-center transform transition-all duration-700 delay-400 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
-            <p className="text-gray-600 mb-6 text-lg">
-              Join our happy guests and experience the best accommodation near Karapitiya Hospital
-            </p>
             <a
-              href="#airbnb"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-accent-500 to-accent-600 rounded-full hover:shadow-lg transform hover:scale-105 transition-all"
+              href="https://www.airbnb.com/users/profile/1463849258647435969?previous_page_name=PdpHomeMarketplace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-gradient-to-r from-primary-600 to-accent-600 rounded-full shadow-2xl hover:shadow-accent-500/50 transform hover:scale-105 transition-all mb-8"
             >
-              Book Your Stay Now
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" 
+                alt="Airbnb" 
+                className="w-20 h-5 mr-3 brightness-0 invert"
+              />
+              View All 24+ Reviews on Airbnb
+              <ExternalLink className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>

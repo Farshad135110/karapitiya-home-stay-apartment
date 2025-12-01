@@ -26,50 +26,101 @@ export default function Gallery() {
   }, [])
 
   const images = [
+    // Bedrooms
     {
-      url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
-      title: 'Living Room',
-      description: 'Spacious and comfortable living area',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521587/IMG-20251129-WA0201_waugpy.jpg',
       title: 'Bedroom 1',
-      description: 'Cozy bedroom with air conditioning',
+      description: 'Comfortable bedroom with modern amenities',
     },
     {
-      url: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521585/IMG-20251129-WA0199_iqrza3.jpg',
       title: 'Bedroom 2',
-      description: 'Second bedroom with study desk',
+      description: 'Cozy sleeping space with air conditioning',
     },
     {
-      url: 'https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&q=80',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521575/IMG-20251129-WA0212_m2hxmb.jpg',
+      title: 'Bedroom 3',
+      description: 'Spacious room perfect for study and rest',
+    },
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521569/IMG-20251129-WA0217_jepbn9.jpg',
+      title: 'Bedroom 4',
+      description: 'Private bedroom with comfortable furnishing',
+    },
+    // Hall Areas
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521581/IMG-20251129-WA0208_iie7ka.jpg',
+      title: 'Living Hall',
+      description: 'Spacious living area for relaxation',
+    },
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521585/IMG-20251129-WA0203_vnuukc.jpg',
+      title: 'Common Area',
+      description: 'Comfortable shared space',
+    },
+    // Dining Areas
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521584/IMG-20251129-WA0202_wirdlo.jpg',
+      title: 'Dining Area 1',
+      description: 'Perfect space for meals together',
+    },
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521579/IMG-20251129-WA0207_tfahug.jpg',
+      title: 'Dining Area 2',
+      description: 'Elegant dining space',
+    },
+    // Kitchen and Pantry
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521584/IMG-20251129-WA0204_ugeyup.jpg',
       title: 'Kitchen',
       description: 'Fully equipped modern kitchen',
     },
     {
-      url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
-      title: 'Bathroom',
-      description: 'Clean bathroom with hot water',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521575/IMG-20251129-WA0215_wplpor.jpg',
+      title: 'Pantry',
+      description: 'Well-stocked pantry area',
     },
     {
-      url: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80',
-      title: 'Dining Area',
-      description: 'Perfect space for meals',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521573/IMG-20251129-WA0214_z8gr9i.jpg',
+      title: 'Washing Machine',
+      description: 'In-unit washing machine for your convenience',
+    },
+    // Bathrooms
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521588/IMG-20251129-WA0198_rwtw8t.jpg',
+      title: 'Bathroom 1',
+      description: 'Clean bathroom with hot water shower',
     },
     {
-      url: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=80',
-      title: 'Study Area',
-      description: 'Quiet space for studying',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521570/IMG-20251129-WA0216_gbvn84.jpg',
+      title: 'Bathroom 2',
+      description: 'Modern bathroom facilities',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368306/exterior_y9duym.avif',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521576/IMG-20251129-WA0210_psilza.jpg',
+      title: 'Bathroom 3',
+      description: 'Spacious bathroom with premium fixtures',
+    },
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521576/IMG-20251129-WA0211_gmcatx.jpg',
+      title: 'Bathroom 4',
+      description: 'Well-maintained washing area',
+    },
+    // Exterior
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521590/exterior_obwedh.avif',
       title: 'Building Exterior',
-      description: 'Modern and secure building with easy access',
+      description: 'Modern and secure building',
     },
     {
-      url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      title: 'Common Area',
-      description: 'Comfortable shared spaces',
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521591/IMG-20251129-WA0197_gyibjr.jpg',
+      title: 'Property View',
+      description: 'Peaceful neighborhood setting',
+    },
+    {
+      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521585/IMG-20251129-WA0205_jcjalg.jpg',
+      title: 'Entrance',
+      description: 'Welcoming property entrance',
     },
   ]
 
@@ -113,6 +164,7 @@ export default function Gallery() {
                   <img
                     src={image.url}
                     alt={image.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -127,23 +179,6 @@ export default function Gallery() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* CTA */}
-          <div
-            className={`text-center mt-12 transform transition-all duration-700 delay-500 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
-          >
-            <p className="text-gray-600 mb-6 text-lg">
-              Want to see more? Book a virtual tour or visit us!
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-full hover:shadow-lg transform hover:scale-105 transition-all"
-            >
-              Schedule a Visit
-            </a>
           </div>
         </div>
       </div>

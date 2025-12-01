@@ -74,7 +74,7 @@ export default function Facilities() {
     {
       icon: UtensilsCrossed,
       title: 'Fully Equipped Kitchen',
-      desc: 'Stove, pots, pans, dishes, and cooking basics',
+      desc: 'Gas cooker, microwave oven, air fryer & cooking essentials',
       color: 'from-orange-500 to-orange-600',
     },
     {
@@ -97,14 +97,14 @@ export default function Facilities() {
     },
     {
       icon: ShowerHead,
-      title: 'Hot Water',
-      desc: 'Hot shower facilities 24/7 with bidet',
+      title: 'Hot Water Shower',
+      desc: 'Hot shower facilities available 24/7',
       color: 'from-red-500 to-red-600',
     },
     {
       icon: Droplets,
       title: 'Hair Dryer',
-      desc: 'Bathroom amenities and cleaning products',
+      desc: 'Hair dryer and bathroom amenities provided',
       color: 'from-blue-400 to-blue-500',
     },
     {
@@ -116,7 +116,7 @@ export default function Facilities() {
     {
       icon: Wrench,
       title: 'Iron & Essentials',
-      desc: 'Towels, bed sheets, soap, and hangers included',
+      desc: 'Towels, bed sheets, and hangers included',
       color: 'from-gray-500 to-gray-600',
     },
     {
@@ -132,12 +132,6 @@ export default function Facilities() {
       color: 'from-yellow-600 to-yellow-700',
     },
     {
-      icon: Building2,
-      title: 'Elevator Access',
-      desc: 'Easy access with modern elevator',
-      color: 'from-slate-500 to-slate-600',
-    },
-    {
       icon: BookOpen,
       title: 'Dedicated Workspace',
       desc: 'Quiet study area with dining table',
@@ -151,8 +145,8 @@ export default function Facilities() {
     },
     {
       icon: Timer,
-      title: 'Long Term Stays',
-      desc: 'Available for 28 days or more',
+      title: 'Minimum Stay',
+      desc: '14 days minimum stay required',
       color: 'from-rose-500 to-rose-600',
     },
   ]
@@ -164,8 +158,6 @@ export default function Facilities() {
     'Do your laundry with washing machine and drying rack',
     'Enjoy secure parking for your vehicle',
     'Feel safe with security cameras and private entrance',
-    'Access laundromat nearby for convenience',
-    'Long-term stays available (28+ days)',
     'Cleaning services available during your stay',
     'Work or study with high-speed WiFi',
     'Stay cool with AC, ceiling and portable fans',

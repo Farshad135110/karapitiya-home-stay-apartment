@@ -51,7 +51,7 @@ export default function AirbnbCTA() {
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Book Your Stay on{' '}
               <span className="relative inline-block">
                 Airbnb
@@ -69,18 +69,38 @@ export default function AirbnbCTA() {
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
                 <Star className="w-10 h-10 text-yellow-300 fill-yellow-300 mx-auto mb-3" />
-                <h3 className="text-white font-bold text-xl mb-2">4.9 Rating</h3>
-                <p className="text-white/90">50+ verified reviews</p>
+                <h3 className="text-white font-bold text-xl mb-2">5.0 Rating</h3>
+                <p className="text-white/90">Perfect score on Airbnb</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <TrendingUp className="w-10 h-10 text-white mx-auto mb-3" />
+                <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                  <img 
+                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+                    alt="Superhost" 
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
                 <h3 className="text-white font-bold text-xl mb-2">Superhost</h3>
-                <p className="text-white/90">Top-rated accommodation</p>
+                <p className="text-white/90">Airbnb Superhost Badge</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
                 <Sparkles className="w-10 h-10 text-white mx-auto mb-3" />
                 <h3 className="text-white font-bold text-xl mb-2">Instant Book</h3>
                 <p className="text-white/90">Quick confirmation</p>
+              </div>
+            </div>
+
+            {/* Large Superhost Badge Showcase */}
+            <div className="bg-white/5 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-8 mb-10 flex flex-col md:flex-row items-center justify-center gap-6">
+              <img 
+                src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+                alt="Airbnb Superhost Badge" 
+                className="w-32 h-32 md:w-40 md:h-40 object-contain"
+              />
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Airbnb Superhost</h3>
+                <p className="text-xl text-white/90 mb-3">Recognized for Outstanding Hospitality</p>
+                <p className="text-white/80 max-w-lg">We maintain the highest standards of service, cleanliness, and guest satisfaction to earn this prestigious badge.</p>
               </div>
             </div>
 
@@ -91,9 +111,11 @@ export default function AirbnbCTA() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-primary-600 bg-white rounded-full shadow-2xl hover:shadow-white/30 transform hover:scale-105 transition-all mb-6"
             >
-              <svg className="w-8 h-8 mr-3" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 1c-1.664 0-3.007 1.343-3.007 3.007 0 .742.27 1.422.716 1.949-.633.43-1.049 1.153-1.049 1.974 0 .82.417 1.544 1.049 1.974-.446.527-.716 1.207-.716 1.949 0 1.664 1.343 3.007 3.007 3.007s3.007-1.343 3.007-3.007c0-.742-.27-1.422-.716-1.949.633-.43 1.049-1.153 1.049-1.974 0-.82-.417-1.544-1.049-1.974.446-.527.716-1.207.716-1.949C19.007 2.343 17.664 1 16 1zm0 2c.564 0 1.007.443 1.007 1.007S16.564 5.014 16 5.014s-1.007-.443-1.007-1.007S15.436 3 16 3zm0 4c.564 0 1.007.443 1.007 1.007S16.564 9.014 16 9.014s-1.007-.443-1.007-1.007S15.436 7 16 7zm0 4c.564 0 1.007.443 1.007 1.007S16.564 13.014 16 13.014s-1.007-.443-1.007-1.007S15.436 11 16 11zM6.5 16C2.91 16 0 18.91 0 22.5S2.91 29 6.5 29s6.5-2.91 6.5-6.5S10.09 16 6.5 16zm19 0c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5 6.5-2.91 6.5-6.5-2.91-6.5-6.5-6.5zm-19 2c2.489 0 4.5 2.011 4.5 4.5S8.989 27 6.5 27 2 24.989 2 22.5 4.011 18 6.5 18zm19 0c2.489 0 4.5 2.011 4.5 4.5s-2.011 4.5-4.5 4.5-4.5-2.011-4.5-4.5 2.011-4.5 4.5-4.5z"/>
-              </svg>
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" 
+                alt="Airbnb" 
+                className="w-24 h-6 mr-3"
+              />
               View on Airbnb
               <ExternalLink className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -118,35 +140,6 @@ export default function AirbnbCTA() {
                 </svg>
                 <span>Flexible Cancellation</span>
               </div>
-            </div>
-          </div>
-
-          {/* Why Book Through Airbnb */}
-          <div
-            className={`mt-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 lg:p-10 transform transition-all duration-700 delay-300 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
-          >
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 text-center">
-              Why Book Through Airbnb?
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: 'Secure Payment', desc: 'Protected transactions' },
-                { title: '24/7 Support', desc: 'Airbnb customer service' },
-                { title: 'Easy Communication', desc: 'Direct host messaging' },
-                { title: 'Flexible Dates', desc: 'Easy to reschedule' },
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h4 className="text-white font-bold mb-1">{item.title}</h4>
-                  <p className="text-white/80 text-sm">{item.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

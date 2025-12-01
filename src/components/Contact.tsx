@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle, Heart, MessageSquare } from 'lucide-react'
+import { Mail, Send, Clock, MessageCircle, Heart, MessageSquare } from 'lucide-react'
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false)
@@ -34,9 +34,45 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to an API
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will contact you shortly.')
+    
+    // Validate phone number (digits only)
+    if (formData.phone && !/^\+?[0-9\s-]+$/.test(formData.phone)) {
+      alert('Please enter a valid phone number (numbers only)')
+      return
+    }
+    
+    // Validate dates
+    if (formData.checkIn && formData.checkOut) {
+      const checkIn = new Date(formData.checkIn)
+      const checkOut = new Date(formData.checkOut)
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
+      
+      if (checkIn < today) {
+        alert('Check-in date cannot be in the past')
+        return
+      }
+      
+      if (checkOut <= checkIn) {
+        alert('Check-out date must be after check-in date')
+        return
+      }
+      
+      // Calculate minimum stay (14 days)
+      const daysDiff = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24))
+      if (daysDiff < 14) {
+        alert('Minimum stay is 14 days. Please adjust your dates.')
+        return
+      }
+    }
+    
+    // Create WhatsApp message with form data
+    const message = `Hello! I'm interested in booking your property.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\n\nMessage: ${formData.message}`
+    
+    const whatsappUrl = `https://wa.me/94759597703?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+    
+    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -56,32 +92,18 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '+94 XX XXX XXXX',
-      link: 'tel:+94xxxxxxxxx',
-      color: 'from-green-500 to-green-600',
-    },
-    {
       icon: MessageSquare,
       title: 'WhatsApp',
-      content: 'Chat with us',
-      link: 'https://wa.me/94xxxxxxxxx',
+      content: '+94 75 959 7703',
+      link: 'https://wa.me/94759597703',
       color: 'from-emerald-500 to-emerald-600',
     },
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@karapitiyahomestay.com',
-      link: 'mailto:info@karapitiyahomestay.com',
+      content: 'rnr.residance@gmail.com',
+      link: 'mailto:rnr.residance@gmail.com',
       color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      content: 'Near Karapitiya Hospital, Galle',
-      link: 'https://maps.google.com',
-      color: 'from-red-500 to-red-600',
     },
   ]
 
@@ -110,7 +132,7 @@ export default function Contact() {
 
           {/* Contact Info Cards */}
           <div
-            className={`grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 transform transition-all duration-700 ${
+            className={`grid md:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto transform transition-all duration-700 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -140,7 +162,7 @@ export default function Contact() {
             })}
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
             {/* Contact Form - Takes 2 columns */}
             <div
               className={`lg:col-span-2 transform transition-all duration-700 delay-200 ${
@@ -197,6 +219,8 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        pattern="[0-9+\s-]*"
+                        title="Please enter numbers only"
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                         placeholder="+94 XX XXX XXXX"
                       />
@@ -258,138 +282,46 @@ export default function Contact() {
 
             {/* Right Side - Takes 3 columns */}
             <div
-              className={`lg:col-span-3 space-y-6 transform transition-all duration-700 delay-300 ${
+              className={`lg:col-span-3 transform transition-all duration-700 delay-300 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}
             >
-              {/* Map Placeholder */}
-              <div className="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl overflow-hidden shadow-2xl h-[280px] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="w-16 h-16 text-primary-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Prime Location
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    5 minutes ride from Karapitiya Teaching Hospital
-                  </p>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 transition-colors"
-                  >
-                    View on Google Maps
-                  </a>
-                </div>
-              </div>
-
-              {/* Two column layout for info boxes */}
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Quick Info */}
-                <div className="bg-gradient-to-br from-accent-500 to-primary-600 rounded-3xl p-6 shadow-2xl text-white">
-                  <h3 className="text-xl font-bold mb-4">Important Information</h3>
-                  <ul className="space-y-3">
-                    {[
-                      'Book early for guaranteed availability',
-                      'Long-term stays (28+ days) available',
-                      'Direct booking through Airbnb',
-                      'Flexible check-in/check-out times',
-                      'If you need to add another guest, please coordinate with us',
-                      'Third party not allowed - privacy guaranteed',
-                      'Airport pickup can be arranged',
-                      'Entire floor with separate entrance',
-                    ].map((tip, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <svg
-                          className="w-5 h-5 flex-shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span className="text-white/95 text-sm">{tip}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* House Rules */}
-                <div className="bg-white rounded-3xl p-6 shadow-2xl border-2 border-primary-200">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 flex items-center">
-                    <svg className="w-6 h-6 mr-2 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    House Rules
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm italic">
-                    Treat this home with care and respect.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    {/* Check-in */}
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-1 flex items-center text-sm">
-                        <Clock className="w-4 h-4 mr-2 text-primary-600" />
-                        Check-in: After 3:00 PM
-                      </h4>
-                    </div>
-
-                    {/* During Stay */}
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">During Your Stay</h4>
-                      <ul className="space-y-1.5 ml-6">
-                        <li className="flex items-start text-gray-700 text-sm">
-                          <span className="text-primary-600 mr-2">•</span>
-                          <span>2 guests max (more with conditions)</span>
-                        </li>
-                        <li className="flex items-start text-gray-700 text-sm">
-                          <span className="text-red-500 mr-2">✗</span>
-                          <span>No pets, parties, smoking</span>
-                        </li>
-                        <li className="flex items-start text-gray-700 text-sm">
-                          <span className="text-red-500 mr-2">✗</span>
-                          <span>No commercial photography</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Additional Rules */}
-                    <div className="bg-amber-50 rounded-lg p-3 border-l-4 border-amber-500">
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Additional Rules</h4>
-                      <ul className="space-y-1.5">
-                        <li className="flex items-start text-gray-700 text-xs">
-                          <span className="text-amber-600 mr-2">⚠</span>
-                          <span>Utility bills: Guest responsibility</span>
-                        </li>
-                        <li className="flex items-start text-gray-700 text-xs">
-                          <span className="text-amber-600 mr-2">⚠</span>
-                          <span>Liquor: Permission required</span>
-                        </li>
-                        <li className="flex items-start text-gray-700 text-xs">
-                          <span className="text-amber-600 mr-2">⚠</span>
-                          <span>Outside people: Not allowed</span>
-                        </li>
-                      </ul>
-                    </div>
+              {/* Important Information */}
+              <div className="bg-gradient-to-br from-accent-500 to-primary-600 rounded-3xl p-8 shadow-2xl text-white">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-white" />
                   </div>
+                  <h3 className="text-2xl font-bold">Important Information</h3>
                 </div>
-              </div>
-
-              {/* Private Stay Highlight */}
-              <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl p-6 shadow-2xl text-white">
-                <h3 className="text-xl font-bold mb-3 flex items-center">
-                  <Heart className="w-6 h-6 mr-2" />
-                  Private Stay for Medical Electives Near Karapitiya Hospital
-                </h3>
-                <p className="text-white/95 leading-relaxed text-sm">
-                  Perfect for medical students on electives. Enjoy a private, peaceful environment with easy access to Karapitiya Hospital.
-                </p>
+                
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                  {[
+                    'Minimum stay: 14 days required',
+                    'Direct booking through Airbnb',
+                    'Flexible check-in/check-out times',
+                    'Coordinate with us for additional guests',
+                    'Privacy guaranteed - no third parties',
+                    'Airport pickup available on request',
+                  ].map((tip, index) => (
+                    <li key={index} className="flex items-start space-x-3">
+                      <svg
+                        className="w-6 h-6 flex-shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span className="text-white/95 text-base leading-relaxed">{tip}</span>
+                    </li>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
