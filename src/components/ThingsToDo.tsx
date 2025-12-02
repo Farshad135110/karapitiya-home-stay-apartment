@@ -11,8 +11,10 @@ import {
   Camera,
   Train,
 } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function ThingsToDo() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -118,11 +120,11 @@ export default function ThingsToDo() {
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Things to Do in <span className="text-accent-600">Galle</span>
+              {t.thingsToDo.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the beauty and culture of Galle, Sri Lanka during your stay
+              {t.thingsToDo.subtitle}
             </p>
           </div>
 
@@ -140,20 +142,20 @@ export default function ThingsToDo() {
               </div>
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Perfect Location Near Karapitiya Teaching Hospital
+                  {t.thingsToDo.hospitalTitle}
                 </h3>
                 <p className="text-white/90 mb-6">
-                  Just a <span className="font-bold">5-minute ride</span> to Karapitiya National Hospital, making it ideal for medical students and healthcare professionals
+                  {t.thingsToDo.hospitalDesc}
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                   <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    Walking Distance
+                    {t.thingsToDo.walkingDistance}
                   </span>
                   <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    Medical Student Friendly
+                    {t.thingsToDo.medicalFriendly}
                   </span>
                   <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    Safe Neighborhood
+                    {t.thingsToDo.safeNeighborhood}
                   </span>
                 </div>
               </div>
@@ -161,7 +163,7 @@ export default function ThingsToDo() {
           </div>
 
           {/* Attractions Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 mb-10">
             {attractions.map((attraction, index) => {
               const Icon = attraction.icon
               return (
@@ -200,7 +202,7 @@ export default function ThingsToDo() {
             }`}
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Must-Visit Places in Galle, Sri Lanka
+              {t.thingsToDo.mustVisit}
             </h3>
             <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {galleHighlights.map((highlight, index) => (

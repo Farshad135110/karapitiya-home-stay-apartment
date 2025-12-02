@@ -22,9 +22,40 @@ html {
   font-size: 16px;
 }
 
+/* Mobile optimization */
 @media (max-width: 640px) {
   html {
     font-size: 14px;
+  }
+}
+
+/* Small laptop optimization (13-14 inch) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  html {
+    font-size: 15px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Standard laptop optimization (15-16 inch) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Large laptop/desktop optimization (17+ inch, 4K) */
+@media (min-width: 1921px) {
+  html {
+    font-size: 18px;
+  }
+  .container {
+    max-width: 1600px;
   }
 }
 

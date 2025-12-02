@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Award, Star, CheckCircle, TrendingUp } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function SuperhostBanner() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -25,9 +27,9 @@ export default function SuperhostBanner() {
   }, [])
 
   const achievements = [
-    { icon: Star, text: '5.0 Rating', desc: 'Perfect Score' },
-    { icon: CheckCircle, text: '100% Response', desc: 'Always Available' },
-    { icon: TrendingUp, text: '24+ Reviews', desc: 'Verified Guests' },
+    { icon: Star, text: t.superhost.rating, desc: t.superhost.ratingDesc },
+    { icon: CheckCircle, text: t.superhost.response, desc: t.superhost.responseDesc },
+    { icon: TrendingUp, text: t.superhost.reviewCount, desc: t.superhost.reviewDesc },
   ]
 
   return (
@@ -65,17 +67,15 @@ export default function SuperhostBanner() {
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full mb-6">
                   <Award className="w-5 h-5" />
-                  <span className="font-semibold">Excellence Recognized</span>
+                  <span className="font-semibold">{t.superhost.badge}</span>
                 </div>
                 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                  Proud Airbnb <br className="hidden lg:block" />
-                  <span className="text-yellow-300">Superhost</span>
+                  {t.superhost.title}
                 </h2>
                 
                 <p className="text-xl text-white/90 mb-8 max-w-xl">
-                  We're honored to be recognized as an Airbnb Superhost for our commitment to exceptional hospitality, 
-                  outstanding service, and maintaining the highest standards for our guests.
+                  {t.superhost.subtitle}
                 </p>
 
                 {/* Achievement Stats */}
@@ -105,7 +105,7 @@ export default function SuperhostBanner() {
                   alt="Airbnb" 
                   className="w-24 h-6 mr-3"
                 />
-                Book with Confidence
+                {t.superhost.cta}
               </a>
             </div>
           </div>

@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { X } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Gallery() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
@@ -139,16 +141,16 @@ export default function Gallery() {
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Photo <span className="text-primary-600">Gallery</span>
+              {t.gallery.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Take a virtual tour of your future home in Galle
+              {t.gallery.subtitle}
             </p>
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {images.map((image, index) => (
               <div
                 key={index}

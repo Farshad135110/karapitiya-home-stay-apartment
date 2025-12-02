@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Building2, Users, Heart, Award } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,18 +48,15 @@ export default function About() {
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              About <span className="text-primary-600">Karapitiya Home Stay</span>
+              {t.about.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your perfect accommodation solution near Karapitiya Teaching Hospital
-            </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 items-start mb-10">
+          <div className="grid lg:grid-cols-5 xl:grid-cols-7 gap-8 xl:gap-12 items-start mb-10">
             {/* Image Side - Takes 2 columns */}
             <div
-              className={`lg:col-span-2 relative transform transition-all duration-700 delay-100 ${
+              className={`lg:col-span-2 xl:col-span-3 relative transform transition-all duration-700 delay-100 ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               }`}
             >
@@ -70,9 +69,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                    <p className="text-primary-800 font-semibold text-lg">
-                      "The closest and most comfortable accommodation for medical students at Karapitiya Hospital"
-                    </p>
+                    <p className="text-primary-800 font-semibold text-lg">{t.about.quote}</p>
                   </div>
                 </div>
               </div>
@@ -83,94 +80,21 @@ export default function About() {
 
             {/* Content Side - Takes 3 columns */}
             <div
-              className={`lg:col-span-3 transform transition-all duration-700 delay-200 ${
+              className={`lg:col-span-3 xl:col-span-4 transform transition-all duration-700 delay-200 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}
             >
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-                <p>
-                  Perfectly tailored for <span className="font-semibold text-accent-600">overseas medical students, visiting faculty, and researchers</span>. Located just a{' '}
-                  <span className="font-semibold text-primary-600">5-minute ride from Karapitiya General Hospital</span>, our accommodation offers the ideal balance of convenience and tranquility.
-                </p>
-                <p>
-                  Within walking distance, you'll find bus stands, supermarkets, Pizza Hut, ATMs, and restaurants. The historic{' '}
-                  <span className="font-semibold">Dutch Fort Galle</span> and beautiful beaches are just a 5-minute tuk-tuk ride away.
-                </p>
-                <p>
-                  This is a <span className="font-semibold text-primary-600">very peaceful place</span>, ensuring you have the privacy, quiet, and concentration needed for studying and research. We understand the demanding schedule of medical training and provide a comfortable environment where you can rest, focus, and feel at home.
-                </p>
+                <p>{t.about.description}</p>
+                <p>{t.about.features}</p>
+                <p>{t.about.host}</p>
               </div>
 
               {/* Space Details */}
               <div className="mt-8 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">What You Get</h4>
-                <div className="grid md:grid-cols-2 gap-3">
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">3 Rooms: 2 bedrooms + 1 office room</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Living room & dining room</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Pantry kitchen & balcony</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">AC, hot water & appliances</p>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <div className="flex-shrink-0 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Washing machine & complete amenities</p>
-                  </div>
-                </div>
+                <p className="font-semibold text-primary-600">{t.about.minimum}</p>
               </div>
             </div>
-          </div>
-
-          {/* Stats Grid */}
-          <div
-            className={`grid grid-cols-2 md:grid-cols-4 gap-6 transform transition-all duration-700 delay-300 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
-          >
-            {stats.map((stat, index) => {
-              const Icon = stat.icon
-              return (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 text-center hover:shadow-xl transition-all hover:scale-105 border border-primary-100"
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h4>
-                  <p className="text-gray-600 font-medium">{stat.label}</p>
-                </div>
-              )
-            })}
           </div>
         </div>
       </div>

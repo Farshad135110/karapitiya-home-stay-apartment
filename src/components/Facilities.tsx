@@ -24,8 +24,10 @@ import {
   Timer,
   Snowflake,
 } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Facilities() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -179,16 +181,16 @@ export default function Facilities() {
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Facilities & <span className="text-accent-600">Amenities</span>
+              {t.facilities.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need for a comfortable stay during your medical training
+              {t.facilities.subtitle}
             </p>
           </div>
 
           {/* Facilities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-12">
             {facilities.map((facility, index) => {
               const Icon = facility.icon
               return (

@@ -8,6 +8,7 @@ import ThingsToDo from '@/components/ThingsToDo'
 import Reviews from '@/components/Reviews'
 import AirbnbCTA from '@/components/AirbnbCTA'
 import Contact from '@/components/Contact'
+import FAQ from '@/components/FAQ'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -19,12 +20,13 @@ export default function Home() {
       <Homes />
       <SuperhostBanner />
       <About />
-      <Facilities />
       <Gallery />
-      <ThingsToDo />
       <Reviews />
+      <Facilities />
+      <ThingsToDo />
       <AirbnbCTA />
       <Contact />
+      <FAQ />
       <Footer />
     </main>
   )

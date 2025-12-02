@@ -43,6 +43,7 @@ export default function Homes() {
 
   return (
     <section
+      id="properties"
       ref={sectionRef}
       className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white"
     >

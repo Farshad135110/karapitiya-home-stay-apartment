@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Star, Quote, ExternalLink } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Reviews() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -105,11 +107,11 @@ export default function Reviews() {
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Guest <span className="text-primary-600">Reviews</span>
+              {t.reviews.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See what medical students and healthcare professionals say about their stay
+              {t.reviews.subtitle}
             </p>
           </div>
 
@@ -124,19 +126,19 @@ export default function Reviews() {
                 <Star className="w-6 h-6 fill-yellow-300 text-yellow-300 mr-1" />
                 <span className="text-3xl font-bold">{stats.averageRating}</span>
               </div>
-              <p className="text-white/90 font-medium">Average Rating</p>
+              <p className="text-white/90 font-medium">{t.reviews.averageRating}</p>
             </div>
             <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-6 text-center text-white shadow-lg">
               <div className="text-3xl font-bold mb-2">{stats.totalReviews}</div>
-              <p className="text-white/90 font-medium">Total Reviews</p>
+              <p className="text-white/90 font-medium">{t.reviews.totalReviews}</p>
             </div>
             <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-center text-white shadow-lg">
               <div className="text-3xl font-bold mb-2">{stats.responseRate}</div>
-              <p className="text-white/90 font-medium">Response Rate</p>
+              <p className="text-white/90 font-medium">{t.reviews.responseRate}</p>
             </div>
             <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-center text-white shadow-lg">
               <div className="text-3xl font-bold mb-2">{stats.responseTime}</div>
-              <p className="text-white/90 font-medium">Response Time</p>
+              <p className="text-white/90 font-medium">{t.reviews.responseTime}</p>
             </div>
           </div>
 
@@ -200,7 +202,7 @@ export default function Reviews() {
                 alt="Airbnb" 
                 className="w-20 h-5 mr-3 brightness-0 invert"
               />
-              View All 24+ Reviews on Airbnb
+              {t.reviews.viewAll}
               <ExternalLink className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

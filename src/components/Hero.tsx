@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { ChevronDown, MapPin, Star, Sparkles } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     setIsVisible(true)
@@ -22,8 +24,8 @@ export default function Hero() {
         <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 py-20 sm:py-28 lg:py-32 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8 xl:px-12 py-16 sm:py-20 md:py-28 lg:py-32 xl:py-36 relative z-10">
+        <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto text-center">
           {/* Logo Badge */}
           <div
             className={`inline-flex items-center justify-center mb-8 transform transition-all duration-700 ${
@@ -41,7 +43,7 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-700 delay-100 ${
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-700 delay-100 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -55,8 +57,16 @@ export default function Hero() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            Your Home Away from Home Near{' '}
-            <span className="font-semibold text-white">Karapitiya Teaching Hospital</span>, Galle
+            {t.hero.title}
+          </p>
+
+          {/* Description */}
+          <p
+            className={`text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-700 delay-250 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            {t.hero.subtitle}
           </p>
 
           {/* Location Badge */}
@@ -98,7 +108,7 @@ export default function Hero() {
                   alt="Airbnb" 
                   className="w-20 h-5 mr-2 brightness-0 invert"
                 />
-                Book Now
+                {t.hero.cta}
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -109,30 +119,10 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-primary-800 transition-all"
             >
-              Contact Us
+              {t.hero.availability}
             </a>
           </div>
 
-          {/* Features Grid */}
-          <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto transform transition-all duration-700 delay-500 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}
-          >
-            {[
-              { title: 'Modern Facilities', desc: 'Fully equipped kitchen, WiFi, AC' },
-              { title: 'Student Friendly', desc: 'Perfect for medical electives' },
-              { title: '5 Star Rated', desc: 'Top rated on Airbnb' },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:scale-105"
-              >
-                <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
-                <p className="text-gray-200 text-sm">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
