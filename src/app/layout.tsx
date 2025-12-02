@@ -18,72 +18,110 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Karapitiya Home Stay Apartment | Medical Student Accommodation Near Teaching Hospital Galle',
-  description: 'Premium Airbnb Superhost homestay for medical students & foreign students at Karapitiya Teaching Hospital, Galle, Sri Lanka. 5★ rated, 10 min walk to hospital & beach. Modern facilities, WiFi, AC, kitchen. Book 14+ days stay.',
+  title: 'RnR Residence | Karapitiya Medical Elective Accommodation & Long-Stay Apartments — Galle, Sri Lanka',
+  description: 'Stay 5 minutes from Karapitiya Teaching Hospital. RnR Residence offers fully furnished long-stay apartments and private homestay rooms ideal for medical elective students, researchers, and foreign families in Galle. Walking distance to supermarkets, restaurants, Galle Fort, and Unawatuna Beach.',
   keywords: [
-    'Karapitiya accommodation',
-    'medical student housing Galle',
-    'Karapitiya hospital homestay',
-    'student apartment near Karapitiya Teaching Hospital',
+    // Primary GEO Keywords - Medical Electives
+    'Karapitiya medical elective accommodation',
     'Galle homestay',
-    'foreign student accommodation Sri Lanka',
-    'Karapitiya teaching hospital accommodation',
-    'homestay Galle Sri Lanka',
-    'medical electives accommodation Galle',
-    'Karapitiya hospital student housing',
-    'Galle medical student apartment',
-    'homestay near hospital Galle',
-    'student accommodation Karapitiya',
-    'Airbnb Karapitiya',
-    'Airbnb Superhost Galle',
+    'Karapitiya residence',
+    'Karapitiya hospital accommodation',
+    'Long stay apartment Galle',
+    'Furnished apartments Galle',
+    'Homestay near Karapitiya Teaching Hospital',
+    'Karapitiya Teaching Hospital accommodation',
+    'Medical elective accommodation Karapitiya',
+    'Student accommodation Karapitiya',
+    
+    // Secondary Medical & Student Keywords
+    'Medical electives Sri Lanka',
+    'Overseas medical student stay',
+    'Accommodation for researchers Galle',
+    'Student homestay Galle',
+    'Medical student housing Karapitiya',
+    'Clinical elective housing Galle',
+    'Foreign medical student accommodation',
+    'Visiting faculty accommodation Galle',
+    'Medical researcher lodging',
+    
+    // Long Stay & Furnished Keywords
+    'Galle apartment rentals',
+    'Galle long stay residence',
+    'Monthly stay accommodation Galle',
+    'Furnished apartment building Galle',
+    'Extended stay Galle',
+    'Long-term apartment rental Galle',
+    'Private rooms for medical students',
+    'Study-friendly rooms Galle',
+    'Work-friendly accommodation',
+    
+    // Location-Based GEO Keywords
+    'Accommodation near Karapitiya Hospital',
+    '5 minutes from Karapitiya Teaching Hospital',
+    'Galle city residence',
+    'Accommodation near Galle Fort',
+    'Stay near Unawatuna Beach',
+    'Galle holiday apartment',
+    'Southern Province accommodation',
+    
+    // Service-Based Keywords
+    'Private homestay Galle',
+    'Serviced accommodation Galle',
+    'Guest house Karapitiya',
+    'Holiday apartment rental Galle',
+    'Vacation home rental Galle',
+    'Student housing center',
+    'Family long-stay residence',
+    'Quiet study environment',
+    
+    // Existing Keywords
     'medical elective housing Sri Lanka',
     'student housing near Karapitiya',
-    'Galle beach accommodation',
-    'furnished apartment Galle',
-    'long term student rental Galle',
-    'affordable student housing Karapitiya',
-    'safe accommodation medical students Galle',
+    'Airbnb Karapitiya',
+    'Airbnb Superhost Galle',
     'RnR Private Residence Galle',
-    'Southern Province accommodation Sri Lanka',
-    'clinical rotation housing Galle',
-    'medical internship accommodation',
-    'Galle Dutch Fort accommodation',
-    'Unawatuna beach student housing',
-    'Karapitiya medical student rental',
-    'teaching hospital nearby accommodation',
+    'safe accommodation medical students Galle',
   ],
   authors: [{ name: 'RnR Family Residence' }],
-  creator: 'RnR Family Residence',
-  publisher: 'Karapitiya Home Stay Apartment',
+  creator: 'RnR Private Residence - Karapitiya Medical Elective Homestay',
+  publisher: 'RnR Residence - Karapitiya Medical Elective Accommodation & Long-Stay Apartments',
   alternates: {
-    canonical: 'https://karapitiyahomestay.com',
+    canonical: 'https://www.karapitiyahomestayapartment.com',
+    languages: {
+      'en': 'https://www.karapitiyahomestayapartment.com/?lang=en',
+      'de': 'https://www.karapitiyahomestayapartment.com/?lang=de',
+      'fr': 'https://www.karapitiyahomestayapartment.com/?lang=fr',
+      'es': 'https://www.karapitiyahomestayapartment.com/?lang=es',
+      'it': 'https://www.karapitiyahomestayapartment.com/?lang=it',
+      'nl': 'https://www.karapitiyahomestayapartment.com/?lang=nl',
+    },
   },
   openGraph: {
-    title: 'Karapitiya Home Stay Apartment | 5★ Airbnb Superhost - Medical Student Housing Galle',
-    description: '5★ rated Airbnb Superhost accommodation for medical students at Karapitiya Teaching Hospital. 10 min walk to hospital & Galle beach. Modern facilities, WiFi, AC, fully furnished.',
+    title: 'RnR Residence — Karapitiya Medical Elective Homestay & Long-Stay Apartments (Galle)',
+    description: 'Stay 5 minutes from Karapitiya Teaching Hospital. Fully furnished long-stay residence ideal for medical elective students, researchers, and foreign guests. Quiet, private, and perfectly located near supermarkets, restaurants, Galle Fort, and Unawatuna Beach.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://karapitiyahomestay.com',
-    siteName: 'Karapitiya Home Stay Apartment',
+    url: 'https://www.karapitiyahomestayapartment.com',
+    siteName: 'RnR Residence - Karapitiya Medical Elective Accommodation',
     images: [
       {
         url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368195/IMG-20251129-WA0201_ivfazj.jpg',
         width: 1200,
         height: 630,
-        alt: 'Karapitiya Home Stay Apartment - Modern Bedroom',
+        alt: 'RnR Residence - Study-friendly modern bedroom for medical elective students 5 minutes from Karapitiya Teaching Hospital Galle',
       },
       {
         url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368180/IMG-20251129-WA0208_vxfnk8.jpg',
         width: 1200,
         height: 630,
-        alt: 'RnR Private Residence - Spacious Living Room',
+        alt: 'RnR Private Residence - Spacious furnished living room for long-stay medical students researchers Galle',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Karapitiya Home Stay Apartment | 5★ Medical Student Housing Galle',
-    description: 'Airbnb Superhost accommodation near Karapitiya Teaching Hospital. Perfect for medical electives.',
+    title: 'RnR Residence | Medical Elective Accommodation 5 Min from Karapitiya Hospital',
+    description: 'Furnished long-stay apartments for medical elective students, researchers & foreign guests. Quiet study-friendly rooms near Karapitiya Teaching Hospital, Galle Fort & Unawatuna Beach.',
     images: ['https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368195/IMG-20251129-WA0201_ivfazj.jpg'],
     site: '@RnRResidence',
     creator: '@RnRResidence',
@@ -115,14 +153,14 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['LodgingBusiness', 'Hotel', 'Accommodation'],
-        '@id': 'https://karapitiyahomestay.com/#organization',
-        name: 'RnR Private Residence - Karapitiya Home Stay Apartment',
-        alternateName: ['RnR Family Residence', 'Karapitiya Home Stay', 'RnR Private Residence Galle'],
-        url: 'https://karapitiyahomestay.com',
+        '@type': ['LodgingBusiness', 'Hotel', 'Accommodation', 'Hostel', 'GuestHouse'],
+        '@id': 'https://www.karapitiyahomestayapartment.com/#organization',
+        name: 'RnR Residence – Karapitiya Medical Elective Homestay & Long-Stay Apartments (Galle)',
+        alternateName: ['RnR Family Residence', 'RnR Private Residence Galle', 'Karapitiya Medical Elective Accommodation', 'Karapitiya Homestay', 'Long-Stay Apartments Galle'],
+        url: 'https://www.karapitiyahomestayapartment.com',
         logo: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png',
-        description: '5.0★ Airbnb Superhost accommodation for medical students near Karapitiya Teaching Hospital, Galle, Sri Lanka. Premium facilities, WiFi, AC, fully furnished apartments perfect for medical electives and clinical rotations.',
-        slogan: 'Your Home Away from Home Near Karapitiya Teaching Hospital',
+        description: 'RnR Residence is a fully furnished long-stay homestay and apartment residence located in the heart of Galle, just 5 minutes from Karapitiya Teaching Hospital. We specialize in hosting overseas medical elective students, visiting faculty, researchers, and long-stay travelers seeking a quiet, safe, and private place to stay. Walking distance to supermarkets, ATMs, Pizza Hut, bus stand, restaurants, and essential services. Perfect for medical electives, clinical rotations, and extended stays in Galle.',
+        slogan: 'Your Home in Galle — Just 5 Minutes from Karapitiya Hospital',
         foundingDate: '2020',
         address: {
           '@type': 'PostalAddress',
@@ -249,11 +287,19 @@ export default function RootLayout({
           { '@type': 'LocationFeatureSpecification', name: 'Fully Equipped Kitchen', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Washing Machine', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Free Parking', value: true },
-          { '@type': 'LocationFeatureSpecification', name: 'Hot Water', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Hot Water 24/7', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Refrigerator', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Study Desk', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Balcony', value: true },
           { '@type': 'LocationFeatureSpecification', name: 'Quiet Environment', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Work-Friendly Rooms', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Self Check-in Available', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Long-Term Stays Allowed', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Laundry Available', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Walking Distance to Hospital', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Near Supermarkets & Restaurants', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'Safe & Secure Building', value: true },
+          { '@type': 'LocationFeatureSpecification', name: 'High Privacy', value: true },
         ],
         petsAllowed: false,
         smokingAllowed: false,
@@ -319,33 +365,53 @@ export default function RootLayout({
           'Student Housing',
           'Medical Education',
           'Galle Tourism',
+          'Medical Elective Programs',
+          'Overseas Medical Students',
+          'Long-Stay Accommodation',
+          'Furnished Apartments',
+          'Researcher Housing',
+          'Visiting Faculty Accommodation',
+          'Student Homestay Services',
+          'Hospital Proximity Lodging',
+          'Study-Friendly Environment',
+          'International Student Services',
         ],
+        additionalType: [
+          'Homestay',
+          'GuestHouse',
+          'StudentHousing',
+          'LongTermRental',
+          'ServicedAccommodation',
+          'FurnishedApartment',
+        ],
+        knowsLanguage: ['English', 'Sinhala', 'Tamil'],
+        availableLanguage: ['English', 'Sinhala'],
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://karapitiyahomestay.com/#website',
-        url: 'https://karapitiyahomestay.com',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#website',
+        url: 'https://www.karapitiyahomestayapartment.com',
         name: 'Karapitiya Home Stay Apartment',
         alternateName: 'RnR Private Residence',
         description: 'Premium Airbnb Superhost accommodation for medical students',
         publisher: {
-          '@id': 'https://karapitiyahomestay.com/#organization',
+          '@id': 'https://www.karapitiyahomestayapartment.com/#organization',
         },
         inLanguage: 'en-US',
         potentialAction: {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: 'https://karapitiyahomestay.com/?s={search_term_string}',
+            urlTemplate: 'https://www.karapitiyahomestayapartment.com/?s={search_term_string}',
           },
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'Organization',
-        '@id': 'https://karapitiyahomestay.com/#organization-main',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#organization-main',
         name: 'RnR Private Residence',
-        url: 'https://karapitiyahomestay.com',
+        url: 'https://www.karapitiyahomestayapartment.com',
         logo: {
           '@type': 'ImageObject',
           url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png',
@@ -375,57 +441,57 @@ export default function RootLayout({
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://karapitiyahomestay.com/#breadcrumb',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://karapitiyahomestay.com',
+            item: 'https://www.karapitiyahomestayapartment.com',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Properties',
-            item: 'https://karapitiyahomestay.com#properties',
+            item: 'https://www.karapitiyahomestayapartment.com#properties',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'About',
-            item: 'https://karapitiyahomestay.com#about',
+            item: 'https://www.karapitiyahomestayapartment.com#about',
           },
           {
             '@type': 'ListItem',
             position: 4,
             name: 'Facilities',
-            item: 'https://karapitiyahomestay.com#facilities',
+            item: 'https://www.karapitiyahomestayapartment.com#facilities',
           },
           {
             '@type': 'ListItem',
             position: 5,
             name: 'Contact',
-            item: 'https://karapitiyahomestay.com#contact',
+            item: 'https://www.karapitiyahomestayapartment.com#contact',
           },
         ],
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://karapitiyahomestay.com/#webpage',
-        url: 'https://karapitiyahomestay.com',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#webpage',
+        url: 'https://www.karapitiyahomestayapartment.com',
         name: 'Karapitiya Home Stay Apartment | Medical Student Accommodation Galle',
         isPartOf: {
-          '@id': 'https://karapitiyahomestay.com/#website',
+          '@id': 'https://www.karapitiyahomestayapartment.com/#website',
         },
         about: {
-          '@id': 'https://karapitiyahomestay.com/#organization',
+          '@id': 'https://www.karapitiyahomestayapartment.com/#organization',
         },
         description: 'Premium Airbnb Superhost homestay for medical students at Karapitiya Teaching Hospital. 5★ rated, modern facilities, 10 min to hospital & beach.',
         inLanguage: 'en-US',
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://karapitiyahomestay.com/#faq',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#faq',
         mainEntity: [
           {
             '@type': 'Question',
@@ -475,11 +541,75 @@ export default function RootLayout({
               text: 'Karapitiya Teaching Hospital (10 min walk), Galle Dutch Fort (5 min), Unawatuna Beach (15 min), Jungle Beach (20 min), Mirissa (45 min for whale watching), supermarkets, restaurants, and public transport. Perfect for both medical work and exploring Southern Sri Lanka.',
             },
           },
+          {
+            '@type': 'Question',
+            name: 'What is the best accommodation for medical elective students near Karapitiya Teaching Hospital?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'RnR Residence offers fully furnished long-stay rooms just 5 minutes from Karapitiya Hospital, designed specifically for medical elective students and researchers. Study-friendly environment with high-speed WiFi, quiet rooms, and walking distance to hospital.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How far is RnR Residence from Karapitiya Hospital?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Only 5 minutes by tuk-tuk and easily accessible from the main road, supermarkets, and bus stand. Walking distance for medical students attending Karapitiya Teaching Hospital.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is RnR Residence suitable for long stay in Galle?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, we offer long-term furnished apartments ideal for foreign students, researchers, and families. Monthly stay options available with all utilities included.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you have fast Wi-Fi for study and work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, high-speed fiber WiFi is available in all rooms, perfect for medical research, online lectures, telemedicine, and video calls. Study-friendly work desks in every room.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the residence close to restaurants and supermarkets?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, everything is within walking distance including Pizza Hut, local restaurants, supermarkets, ATMs, pharmacies, and bus stand. Very convenient for daily needs.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you accept overseas medical students and researchers?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, we specialize in hosting international medical elective students, visiting faculty, researchers, and long-stay foreign guests. We have extensive experience with medical students from USA, UK, Australia, Europe, and Middle East.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is RnR Residence a quiet and private accommodation?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, our residence offers high privacy, peaceful surroundings, and a quiet study-friendly environment perfect for medical students who need to focus on their studies and clinical work.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What makes RnR Residence ideal for medical electives?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Located 5 minutes from Karapitiya Teaching Hospital, fully furnished rooms with study desks, high-speed WiFi, quiet environment, air conditioning, kitchen facilities, washing machine, and 24/7 hot water. Perfect for clinical rotations and extended medical stays.',
+            },
+          },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': 'https://karapitiyahomestay.com/#properties-list',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#properties-list',
         name: 'Available Properties at RnR Private Residence',
         description: 'Premium accommodation options near Karapitiya Teaching Hospital',
         numberOfItems: 2,
@@ -532,7 +662,7 @@ export default function RootLayout({
       },
       {
         '@type': 'Place',
-        '@id': 'https://karapitiyahomestay.com/#place',
+        '@id': 'https://www.karapitiyahomestayapartment.com/#place',
         name: 'Karapitiya Home Stay Apartment',
         address: {
           '@type': 'PostalAddress',
@@ -573,14 +703,37 @@ export default function RootLayout({
         <meta name="geo.position" content="6.0535;80.2210" />
         <meta name="ICBM" content="6.0535, 80.2210" />
         
+        {/* Additional GEO and Business Meta Tags */}
+        <meta name="city" content="Galle" />
+        <meta name="state" content="Southern Province" />
+        <meta name="country" content="Sri Lanka" />
+        <meta name="location" content="Karapitiya, Galle, Sri Lanka" />
+        <meta name="business.category" content="Lodging, Homestay, Student Housing, Medical Accommodation" />
+        <meta name="business.hours" content="24/7" />
+        <meta name="business.phone" content="+94759597703" />
+        <meta name="business.email" content="rnr.residance@gmail.com" />
+        <meta name="target.audience" content="Medical Students, Researchers, Foreign Students, Long-Stay Travelers" />
+        <meta name="service.area" content="Karapitiya, Galle, Southern Province, Sri Lanka" />
+        <meta name="nearby.landmark" content="Karapitiya Teaching Hospital" />
+        <meta name="distance.hospital" content="5 minutes" />
+        <meta name="property.type" content="Furnished Apartment, Homestay, Student Housing" />
+        <meta name="accommodation.type" content="Long-Stay, Medical Elective, Student Housing, Researcher Accommodation" />
+        
+        {/* AEO - Answer Engine Optimization Meta Tags */}
+        <meta name="question:best-medical-accommodation" content="RnR Residence offers fully furnished rooms 5 minutes from Karapitiya Teaching Hospital for medical elective students" />
+        <meta name="question:distance-to-hospital" content="Only 5 minutes by tuk-tuk from Karapitiya Teaching Hospital" />
+        <meta name="question:long-stay-suitable" content="Yes, ideal for long-term stays with monthly accommodation options for students and researchers" />
+        <meta name="question:wifi-available" content="Yes, high-speed fiber WiFi in all rooms for study and work" />
+        <meta name="question:near-amenities" content="Walking distance to supermarkets, restaurants, ATMs, Pizza Hut, and bus stand" />
+        
         {/* Multilingual hreflang Tags */}
-        <link rel="alternate" hrefLang="en" href="https://karapitiyahomestay.com/?lang=en" />
-        <link rel="alternate" hrefLang="de" href="https://karapitiyahomestay.com/?lang=de" />
-        <link rel="alternate" hrefLang="fr" href="https://karapitiyahomestay.com/?lang=fr" />
-        <link rel="alternate" hrefLang="es" href="https://karapitiyahomestay.com/?lang=es" />
-        <link rel="alternate" hrefLang="it" href="https://karapitiyahomestay.com/?lang=it" />
-        <link rel="alternate" hrefLang="nl" href="https://karapitiyahomestay.com/?lang=nl" />
-        <link rel="alternate" hrefLang="x-default" href="https://karapitiyahomestay.com/" />
+        <link rel="alternate" hrefLang="en" href="https://www.karapitiyahomestayapartment.com/?lang=en" />
+        <link rel="alternate" hrefLang="de" href="https://www.karapitiyahomestayapartment.com/?lang=de" />
+        <link rel="alternate" hrefLang="fr" href="https://www.karapitiyahomestayapartment.com/?lang=fr" />
+        <link rel="alternate" hrefLang="es" href="https://www.karapitiyahomestayapartment.com/?lang=es" />
+        <link rel="alternate" hrefLang="it" href="https://www.karapitiyahomestayapartment.com/?lang=it" />
+        <link rel="alternate" hrefLang="nl" href="https://www.karapitiyahomestayapartment.com/?lang=nl" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.karapitiyahomestayapartment.com/" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="language" content="English" />

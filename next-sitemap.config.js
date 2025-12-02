@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://karapitiyahomestay.com',
+  siteUrl: process.env.SITE_URL || 'https://www.karapitiyahomestayapartment.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -18,7 +18,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://karapitiyahomestay.com/sitemap.xml',
+      'https://www.karapitiyahomestayapartment.com/sitemap.xml',
     ],
   },
   exclude: ['/api/*'],

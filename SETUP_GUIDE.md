@@ -297,7 +297,7 @@ Karapitiya Home Stay Apartment/
    - [ ] Add schema markup for rich results
 
 4. **Domain Setup**
-   - [ ] Purchase domain (e.g., karapitiyahomestay.com)
+   - [ ] Purchase domain (e.g., karapitiyahomestayapartment.com)
    - [ ] Configure DNS
    - [ ] Set up SSL certificate
 

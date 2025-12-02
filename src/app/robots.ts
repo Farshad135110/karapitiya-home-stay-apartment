@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://karapitiyahomestay.com/sitemap.xml',
+    sitemap: 'https://www.karapitiyahomestayapartment.com/sitemap.xml',
   }
 }

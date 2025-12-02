@@ -126,4 +126,4 @@ All rights reserved © 2025 Karapitiya Home Stay Apartment
 
 ## Support
 
-For questions or support, contact: info@karapitiyahomestay.com
+For questions or support, contact: rnr.residance@gmail.com

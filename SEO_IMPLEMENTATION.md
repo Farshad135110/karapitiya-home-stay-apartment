@@ -77,9 +77,9 @@
 **Priority: CRITICAL - Do this within 24 hours**
 
 1. **Sign Up**: Go to [Google Search Console](https://search.google.com/search-console)
-2. **Add Property**: Enter https://karapitiyahomestay.com
+2. **Add Property**: Enter https://www.karapitiyahomestayapartment.com
 3. **Verify Ownership**: Choose DNS verification method (recommended) or HTML file upload
-4. **Submit Sitemap**: Add https://karapitiyahomestay.com/sitemap.xml
+4. **Submit Sitemap**: Add https://www.karapitiyahomestayapartment.com/sitemap.xml
 5. **Request Indexing**: Use URL Inspection tool to manually request indexing for:
    - Homepage (/)
    - Properties section (#properties)
@@ -113,7 +113,7 @@ This is the #1 factor for local search visibility!
    
 3. **Contact Information**:
    - **Phone**: +94759597703
-   - **Website**: https://karapitiyahomestay.com
+   - **Website**: https://www.karapitiyahomestayapartment.com
    - **WhatsApp**: +94759597703
    - **Email**: rnr.residance@gmail.com
    

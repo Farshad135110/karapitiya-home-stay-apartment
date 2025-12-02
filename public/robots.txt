@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://karapitiyahomestay.com/sitemap.xml
+Sitemap: https://www.karapitiyahomestayapartment.com/sitemap.xml
 
 # Crawl delay (optional, helps prevent server overload)
 Crawl-delay: 1
