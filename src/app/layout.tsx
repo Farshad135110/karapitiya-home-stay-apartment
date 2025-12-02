@@ -206,17 +206,6 @@ export default function RootLayout({
           bestRating: '5',
           worstRating: '1',
         },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '5.0',
-          reviewCount: 24,
-          bestRating: '5',
-          worstRating: '1',
-          itemReviewed: {
-            '@type': 'LodgingBusiness',
-            name: 'RnR Private Residence',
-          },
-        },
         review: [
           {
             '@type': 'Review',
@@ -329,6 +318,29 @@ export default function RootLayout({
             '@type': 'Product',
             name: 'Medical Student Housing',
             description: 'Fully furnished apartment near Karapitiya Teaching Hospital',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '0',
+                priceCurrency: 'USD',
+                referenceQuantity: {
+                  '@type': 'QuantitativeValue',
+                  value: '1',
+                  unitText: 'NIGHT'
+                }
+              }
+            },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '5.0',
+              reviewCount: '50',
+              bestRating: '5',
+              worstRating: '1'
+            }
           },
         },
         potentialAction: [
