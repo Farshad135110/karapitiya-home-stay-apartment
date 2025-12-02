@@ -153,7 +153,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['LodgingBusiness', 'Hotel', 'Accommodation', 'Hostel', 'GuestHouse'],
+        '@type': ['LodgingBusiness', 'Hotel', 'Accommodation', 'Hostel'],
         '@id': 'https://www.karapitiyahomestayapartment.com/#organization',
         name: 'RnR Residence – Karapitiya Medical Elective Homestay & Long-Stay Apartments (Galle)',
         alternateName: ['RnR Family Residence', 'RnR Private Residence Galle', 'Karapitiya Medical Elective Accommodation', 'Karapitiya Homestay', 'Long-Stay Apartments Galle'],
