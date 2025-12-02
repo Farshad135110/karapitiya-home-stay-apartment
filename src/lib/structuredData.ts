@@ -1,6 +1,6 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': ['LodgingBusiness', 'Hotel', 'Accommodation', 'Hostel', 'GuestHouse'],
+  '@type': ['LodgingBusiness', 'Hotel', 'Accommodation', 'Hostel'],
   '@id': 'https://www.karapitiyahomestayapartment.com/#organization',
   name: 'RnR Residence – Karapitiya Medical Elective Homestay & Long-Stay Apartments (Galle)',
   alternateName: [

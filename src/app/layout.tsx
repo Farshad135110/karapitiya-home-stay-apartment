@@ -390,7 +390,6 @@ export default function RootLayout({
         ],
         additionalType: [
           'Homestay',
-          'GuestHouse',
           'StudentHousing',
           'LongTermRental',
           'ServicedAccommodation',
