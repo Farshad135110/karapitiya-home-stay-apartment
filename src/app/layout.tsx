@@ -20,68 +20,6 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'RnR Residence | Karapitiya Medical Elective Accommodation & Long-Stay Apartments — Galle, Sri Lanka',
   description: 'Stay 5 minutes from Karapitiya Teaching Hospital. RnR Residence offers fully furnished long-stay apartments and private homestay rooms ideal for medical elective students, researchers, and foreign families in Galle. Walking distance to supermarkets, restaurants, Galle Fort, and Unawatuna Beach.',
-  keywords: [
-    // Primary GEO Keywords - Medical Electives
-    'Karapitiya medical elective accommodation',
-    'Galle homestay',
-    'Karapitiya residence',
-    'Karapitiya hospital accommodation',
-    'Long stay apartment Galle',
-    'Furnished apartments Galle',
-    'Homestay near Karapitiya Teaching Hospital',
-    'Karapitiya Teaching Hospital accommodation',
-    'Medical elective accommodation Karapitiya',
-    'Student accommodation Karapitiya',
-    
-    // Secondary Medical & Student Keywords
-    'Medical electives Sri Lanka',
-    'Overseas medical student stay',
-    'Accommodation for researchers Galle',
-    'Student homestay Galle',
-    'Medical student housing Karapitiya',
-    'Clinical elective housing Galle',
-    'Foreign medical student accommodation',
-    'Visiting faculty accommodation Galle',
-    'Medical researcher lodging',
-    
-    // Long Stay & Furnished Keywords
-    'Galle apartment rentals',
-    'Galle long stay residence',
-    'Monthly stay accommodation Galle',
-    'Furnished apartment building Galle',
-    'Extended stay Galle',
-    'Long-term apartment rental Galle',
-    'Private rooms for medical students',
-    'Study-friendly rooms Galle',
-    'Work-friendly accommodation',
-    
-    // Location-Based GEO Keywords
-    'Accommodation near Karapitiya Hospital',
-    '5 minutes from Karapitiya Teaching Hospital',
-    'Galle city residence',
-    'Accommodation near Galle Fort',
-    'Stay near Unawatuna Beach',
-    'Galle holiday apartment',
-    'Southern Province accommodation',
-    
-    // Service-Based Keywords
-    'Private homestay Galle',
-    'Serviced accommodation Galle',
-    'Guest house Karapitiya',
-    'Holiday apartment rental Galle',
-    'Vacation home rental Galle',
-    'Student housing center',
-    'Family long-stay residence',
-    'Quiet study environment',
-    
-    // Existing Keywords
-    'medical elective housing Sri Lanka',
-    'student housing near Karapitiya',
-    'Airbnb Karapitiya',
-    'Airbnb Superhost Galle',
-    'RnR Private Residence Galle',
-    'safe accommodation medical students Galle',
-  ],
   authors: [{ name: 'RnR Family Residence' }],
   creator: 'RnR Private Residence - Karapitiya Medical Elective Homestay',
   publisher: 'RnR Residence - Karapitiya Medical Elective Accommodation & Long-Stay Apartments',
@@ -702,6 +640,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://www.airbnb.com" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
+        
+        {/* Canonical URL - Critical for SEO */}
+        <link rel="canonical" href="https://www.karapitiyahomestayapartment.com/" />
         
         {/* Favicon and Icons */}
         <link rel="icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" type="image/png" />
