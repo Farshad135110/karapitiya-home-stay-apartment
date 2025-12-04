@@ -19,6 +19,13 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.karapitiyahomestayapartment.com/?lang=nl" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.karapitiyahomestayapartment.com/" />
     
+    <!-- Organization Logo -->
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_512,h_512,c_fit/v1764368260/Untitled_design_15_hwkj0c.png</image:loc>
+      <image:title>RnR Residence Logo - Karapitiya Medical Elective Accommodation</image:title>
+      <image:caption>Official logo of RnR Private Residence, premium homestay near Karapitiya Teaching Hospital Galle</image:caption>
+    </image:image>
+    
     <!-- Property Images -->
     <image:image>
       <image:loc>https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368195/IMG-20251129-WA0201_ivfazj.jpg</image:loc>
