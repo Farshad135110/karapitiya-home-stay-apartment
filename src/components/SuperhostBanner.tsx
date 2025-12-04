@@ -1,30 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Award, Star, CheckCircle, TrendingUp } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function SuperhostBanner() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const [isVisible] = useState(true)
 
   const achievements = [
     { icon: Star, text: t.superhost.rating, desc: t.superhost.ratingDesc },
@@ -34,7 +16,6 @@ export default function SuperhostBanner() {
 
   return (
     <section
-      ref={sectionRef}
       className="py-16 lg:py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 relative overflow-hidden"
     >
       {/* Animated Background */}

@@ -1,31 +1,13 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { X } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Gallery() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible] = useState(true)
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const images = [
     // Bedrooms
@@ -116,7 +98,6 @@ export default function Gallery() {
 
   return (
     <section
-      ref={sectionRef}
       id="gallery"
       className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white"
     >
@@ -183,6 +164,7 @@ export default function Gallery() {
           <button
             className="absolute top-4 right-4 text-white hover:text-accent-400 transition-colors"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close gallery lightbox"
           >
             <X size={32} />
           </button>
@@ -210,6 +192,7 @@ export default function Gallery() {
                   )
                 }}
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold transition-all"
+                aria-label="View previous image"
               >
                 Previous
               </button>
@@ -221,6 +204,7 @@ export default function Gallery() {
                   )
                 }}
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold transition-all"
+                aria-label="View next image"
               >
                 Next
               </button>

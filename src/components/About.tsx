@@ -1,30 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Building2, Users, Heart, Award } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible] = useState(true)
   const { t } = useLanguage()
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const stats = [
     { icon: Building2, value: '3', label: 'Rooms Available' },
@@ -35,7 +17,6 @@ export default function About() {
 
   return (
     <section
-      ref={sectionRef}
       id="about"
       className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white"
     >

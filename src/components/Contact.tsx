@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Mail, Send, Clock, MessageCircle, Heart, MessageSquare } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Contact() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible] = useState(true)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,24 +15,6 @@ export default function Contact() {
     checkOut: '',
     message: '',
   })
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -111,7 +93,6 @@ export default function Contact() {
 
   return (
     <section
-      ref={sectionRef}
       id="contact"
       className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50"
     >

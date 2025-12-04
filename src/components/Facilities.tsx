@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import {
   Wifi,
   Wind,
@@ -28,25 +28,7 @@ import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Facilities() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const [isVisible] = useState(true)
 
   const facilities = [
     {
@@ -168,7 +150,6 @@ export default function Facilities() {
 
   return (
     <section
-      ref={sectionRef}
       id="facilities"
       className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50"
     >

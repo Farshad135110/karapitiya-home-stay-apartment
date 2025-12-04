@@ -1,28 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { ExternalLink, Users, Home, MapPin } from 'lucide-react'
 
 export default function Homes() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const [isVisible] = useState(true)
 
   const homes = [
     {
@@ -44,7 +26,6 @@ export default function Homes() {
   return (
     <section
       id="properties"
-      ref={sectionRef}
       className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="container mx-auto px-4 lg:px-8">

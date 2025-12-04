@@ -1,31 +1,13 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown, HelpCircle } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function FAQ() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible] = useState(true)
   const [openIndex, setOpenIndex] = useState<number | null>(0)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const faqs = t.faq.items
 
@@ -35,7 +17,6 @@ export default function FAQ() {
 
   return (
     <section
-      ref={sectionRef}
       id="faq"
       className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white"
     >
@@ -72,6 +53,8 @@ export default function FAQ() {
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors"
+                  aria-expanded={openIndex === index}
+                  aria-label={`Toggle FAQ: ${faq.question}`}
                 >
                   <h3 className="text-lg font-bold text-gray-900 pr-4">
                     {faq.question}
