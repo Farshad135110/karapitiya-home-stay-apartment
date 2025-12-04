@@ -37,6 +37,7 @@ export default function Navbar() {
           ? 'bg-white shadow-lg py-4'
           : 'bg-transparent py-6'
       }`}
+      aria-label="Main navigation"
     >
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex items-center justify-between">
@@ -85,6 +86,8 @@ export default function Navbar() {
             className={`lg:hidden p-2 rounded-lg ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -92,7 +95,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-fade-in">
+          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-fade-in" role="menu" aria-label="Mobile navigation menu">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

@@ -9,7 +9,9 @@ export default function Hero() {
   const { t } = useLanguage()
 
   useEffect(() => {
-    setIsVisible(true)
+    // Faster initial render for better LCP
+    const timer = setTimeout(() => setIsVisible(true), 50)
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -28,14 +30,15 @@ export default function Hero() {
         <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto text-center">
           {/* Logo Badge */}
           <div
-            className={`inline-flex items-center justify-center mb-8 transform transition-all duration-700 ${
+            className={`inline-flex items-center justify-center mb-8 transform transition-all duration-500 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-white p-3 shadow-2xl">
               <img 
-                src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" 
-                alt="Karapitiya Home Stay Logo" 
+                src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" 
+                alt="Karapitiya Home Stay Logo"
+                fetchpriority="high"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -43,26 +46,26 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-700 delay-100 ${
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-500 delay-75 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
             Karapitiya Home Stay
-            <span className="block text-accent-400 mt-2">Apartment</span>
+            <span className="block text-accent-500 mt-2">Apartment</span>
           </h1>
 
           {/* Subtitle */}
           <p
-            className={`text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-700 delay-200 ${
+            className={`text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-500 delay-100 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
             {t.hero.title}
           </p>
 
-          {/* Description */}
+          {/* Description - LCP Element */}
           <p
-            className={`text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-700 delay-250 ${
+            className={`text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-500 delay-150 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -71,7 +74,7 @@ export default function Hero() {
 
           {/* Location Badge */}
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 py-3 rounded-full mb-6 sm:mb-10 transform transition-all duration-700 delay-300 ${
+            className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 py-3 rounded-full mb-6 sm:mb-10 transform transition-all duration-500 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -92,7 +95,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 transform transition-all duration-700 delay-400 ${
+            className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 transform transition-all duration-500 delay-250 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -130,6 +133,7 @@ export default function Hero() {
       <a
         href="#about"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        aria-label="Scroll down to about section"
       >
         <ChevronDown className="w-8 h-8 text-white" />
       </a>

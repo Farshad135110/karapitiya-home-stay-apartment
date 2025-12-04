@@ -56,9 +56,9 @@ export default function SuperhostBanner() {
               <div className="flex-shrink-0">
                 <div className="bg-white/10 backdrop-blur-sm border-4 border-white/30 rounded-3xl p-8 shadow-2xl">
                   <img 
-                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_512,c_limit/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
                     alt="Airbnb Superhost Badge" 
-                    className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-contain drop-shadow-2xl"
+                    className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-contain drop-shadow-2xl animate-float"
                   />
                 </div>
               </div>

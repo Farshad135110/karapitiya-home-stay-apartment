@@ -162,7 +162,7 @@ export default function Reviews() {
                       className="w-12 h-12 rounded-full"
                     />
                     <div>
-                      <h4 className="font-bold text-gray-900">{review.name}</h4>
+                      <h3 className="font-bold text-gray-900">{review.name}</h3>
                       <p className="text-sm text-gray-600">{review.role}</p>
                     </div>
                   </div>

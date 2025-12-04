@@ -100,7 +100,7 @@ export default function Homes() {
                 {/* Superhost Badge Overlay */}
                 <div className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
                   <img 
-                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
                     alt="Superhost" 
                     className="w-8 h-8 object-contain"
                   />

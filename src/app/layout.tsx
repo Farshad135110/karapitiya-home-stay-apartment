@@ -634,20 +634,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
-        {/* Preconnect for Performance */}
+        {/* Preload Critical LCP Images */}
+        <link rel="preload" as="image" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" fetchpriority="high" />
+        
+        {/* Preconnect for Performance - Critical Origins */}
+        <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://upload.wikimedia.org" />
         <link rel="dns-prefetch" href="https://www.airbnb.com" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
+        <link rel="dns-prefetch" href="https://placehold.co" />
         
         {/* Canonical URL - Critical for SEO */}
         <link rel="canonical" href="https://www.karapitiyahomestayapartment.com/" />
         
-        {/* Favicon and Icons */}
-        <link rel="icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" type="image/png" />
-        <link rel="apple-touch-icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" />
-        <link rel="shortcut icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" />
+        {/* Favicon and Icons - Optimized */}
+        <link rel="icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_64,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_180,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" />
+        <link rel="shortcut icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_64,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" />
         
         {/* Geo & Location Meta Tags */}
         <meta name="geo.region" content="LK-3" />

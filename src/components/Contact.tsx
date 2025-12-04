@@ -231,10 +231,11 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="checkIn" className="block text-sm font-semibold text-gray-700 mb-2">
                         {t.contact.form.checkin}
                       </label>
                       <input
+                        id="checkIn"
                         type="date"
                         name="checkIn"
                         value={formData.checkIn}
@@ -243,10 +244,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="checkOut" className="block text-sm font-semibold text-gray-700 mb-2">
                         {t.contact.form.checkout}
                       </label>
                       <input
+                        id="checkOut"
                         type="date"
                         name="checkOut"
                         value={formData.checkOut}
@@ -297,7 +299,7 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold">{t.contact.important.title}</h3>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4">
                   {[
                     t.contact.important.minimum,
                     t.contact.important.booking,
@@ -312,6 +314,7 @@ export default function Contact() {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -323,7 +326,7 @@ export default function Contact() {
                       <span className="text-white/95 text-base leading-relaxed">{tip}</span>
                     </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
               {/* Google Maps and Business Profile */}
