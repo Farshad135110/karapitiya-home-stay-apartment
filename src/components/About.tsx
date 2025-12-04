@@ -64,6 +64,9 @@ export default function About() {
               <img 
                   src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_800,c_limit/v1764368306/exterior_y9duym.avif"
                   alt="Karapitiya Home Stay Apartment Exterior"
+                  width="800"
+                  height="600"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent"></div>

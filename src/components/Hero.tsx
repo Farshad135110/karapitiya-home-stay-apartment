@@ -1,18 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown, MapPin, Star, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const { t } = useLanguage()
-
-  useEffect(() => {
-    // Faster initial render for better LCP
-    const timer = setTimeout(() => setIsVisible(true), 50)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <section
@@ -20,7 +14,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600"
     >
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10" aria-hidden="true">
         <div className="absolute top-20 left-20 w-64 h-64 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
         <div className="absolute top-40 right-20 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -30,7 +24,7 @@ export default function Hero() {
         <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto text-center">
           {/* Logo Badge */}
           <div
-            className={`inline-flex items-center justify-center mb-8 transform transition-all duration-500 ${
+            className={`inline-flex items-center justify-center mb-8 transform transition-all duration-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -39,6 +33,8 @@ export default function Hero() {
                 src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" 
                 alt="Karapitiya Home Stay Logo"
                 fetchpriority="high"
+                width="128"
+                height="128"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -46,7 +42,7 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-500 delay-75 ${
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight transform transition-all duration-300 delay-50 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -56,7 +52,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className={`text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-500 delay-100 ${
+            className={`text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-300 delay-75 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -65,7 +61,7 @@ export default function Hero() {
 
           {/* Description - LCP Element */}
           <p
-            className={`text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-500 delay-150 ${
+            className={`text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto transform transition-all duration-300 delay-100 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -74,7 +70,7 @@ export default function Hero() {
 
           {/* Location Badge */}
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 py-3 rounded-full mb-6 sm:mb-10 transform transition-all duration-500 delay-200 ${
+            className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 py-3 rounded-full mb-6 sm:mb-10 transform transition-all duration-300 delay-150 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -95,7 +91,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 transform transition-all duration-500 delay-250 ${
+            className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 transform transition-all duration-300 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
