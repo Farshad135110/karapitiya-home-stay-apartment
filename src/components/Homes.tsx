@@ -10,14 +10,14 @@ export default function Homes() {
     {
       title: 'Apartment for Medical Electives Students - Galle',
       url: 'https://www.airbnb.com/rooms/1297705979521687357',
-      image: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521587/IMG-20251129-WA0201_waugpy.jpg',
+      image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529854/exterior_tn8eep.avif',
       description: 'Perfect for medical students on electives',
       features: ['2 Guests', 'Near Hospital', 'Fully Equipped']
     },
     {
       title: 'RnR Private Residence',
       url: 'https://www.airbnb.com/rooms/830788991042580081',
-      image: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764521585/IMG-20251129-WA0203_vnuukc.jpg',
+      image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0219_fjidee.jpg',
       description: 'Perfect for medical students on electives',
       features: ['2 Guests', 'Near Hospital', 'Fully Equipped']
     }
@@ -81,7 +81,7 @@ export default function Homes() {
                 {/* Superhost Badge Overlay */}
                 <div className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
                   <img 
-                    src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+                    src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_1_jrrqhp.png" 
                     alt="Superhost" 
                     className="w-8 h-8 object-contain"
                   />

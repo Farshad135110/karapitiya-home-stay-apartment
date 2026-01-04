@@ -37,13 +37,11 @@ export default function Footer() {
           {/* About Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-14 h-14 rounded-xl overflow-hidden bg-white p-2 shadow-lg">
-                <img 
-                  src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" 
-                  alt="RnR Private Residence Logo" 
-                  className="w-full h-full object-contain" 
-                />
-              </div>
+              <img 
+                src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" 
+                alt="RnR Private Residence Logo" 
+                className="w-14 h-14 object-contain rounded-xl bg-white shadow-lg" 
+              />
               <div>
                 <h3 className="font-bold text-xl">RnR Private Residence</h3>
                 <div className="flex items-center space-x-1 mt-1">

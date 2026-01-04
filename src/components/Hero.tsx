@@ -28,16 +28,14 @@ export default function Hero() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-white p-3 shadow-2xl">
-              <img 
-                src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" 
-                alt="Karapitiya Home Stay Logo"
-                fetchpriority="high"
-                width="128"
-                height="128"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img 
+              src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" 
+              alt="RnR Private Residence Logo"
+              fetchpriority="high"
+              width="128"
+              height="128"
+              className="w-24 h-24 md:w-32 md:h-32 object-contain rounded-2xl"
+            />
           </div>
 
           {/* Main Heading */}
@@ -46,8 +44,7 @@ export default function Hero() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            Karapitiya Home Stay
-            <span className="block text-accent-500 mt-2">Apartment</span>
+            RnR Private Residence
           </h1>
 
           {/* Subtitle */}
@@ -78,7 +75,7 @@ export default function Hero() {
             <span>5 minutes from Karapitiya National Hospital</span>
             <span className="text-white/60 mx-2">|</span>
             <img 
-              src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764518017/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_xmf6xc.png" 
+              src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_1_jrrqhp.png" 
               alt="Superhost" 
               className="w-6 h-6 object-contain"
             />

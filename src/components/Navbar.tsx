@@ -33,48 +33,50 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white shadow-lg py-4'
-          : 'bg-transparent py-6'
+        isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'
       }`}
       aria-label="Main navigation"
     >
-      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="max-w-[100vw] w-full px-2 sm:px-4 md:px-6 lg:px-8 mx-auto">
+        <div className="flex flex-wrap items-center justify-between gap-y-2 md:gap-y-0">
           {/* Logo */}
-          <Link href="#home" className="flex items-center space-x-2 group">
-            <div className="w-12 h-12 rounded-lg overflow-hidden bg-white p-2 shadow-lg transform group-hover:scale-110 transition-transform">
-              <img src="https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png" alt="Karapitiya Home Stay Logo" className="w-full h-full object-contain" />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className={`font-bold text-lg leading-tight ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+          <Link href="#home" className="flex items-center gap-2 group min-w-0">
+            <img 
+              src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" 
+              alt="RnR Private Residence Logo" 
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-lg bg-white shadow-lg group-hover:scale-110 transition-transform" 
+            />
+            <div className="hidden xs:block min-w-0">
+              <h1 className={`font-bold text-base sm:text-lg truncate leading-tight ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
                 RnR Private Residence
               </h1>
               <p className={`text-xs ${isScrolled ? 'text-gray-600' : 'text-gray-200'}`}>
-                Near Karapitiya Hospital
+                {t.nav.subtitle}
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-6 flex-wrap">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors hover:text-accent-500 ${
+                className={`font-medium px-2 py-1 rounded-md transition-colors hover:text-accent-500 hover:bg-accent-50/30 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <LanguageSwitcher />
+            <div className="ml-2">
+              <LanguageSwitcher />
+            </div>
             <a
               href="https://www.airbnb.com/h/rnrfamily"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
+              className="ml-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all whitespace-nowrap"
             >
               {t.hero.cta}
             </a>
@@ -85,7 +87,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg ${
               isScrolled ? 'text-gray-800' : 'text-white'
-            }`}
+            } focus:outline-none focus:ring-2 focus:ring-accent-400`}
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
           >
@@ -94,23 +96,28 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-fade-in" role="menu" aria-label="Mobile navigation menu">
+        <div
+          className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isMobileMenuOpen ? 'max-h-[600px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+          }`}
+          style={{
+            transitionProperty: 'max-height, opacity',
+          }}
+          role="menu"
+          aria-label="Mobile navigation menu"
+        >
+          <div className="flex flex-col gap-2 bg-white/90 rounded-2xl shadow-xl py-4 px-4 mt-2 backdrop-blur-md">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block py-2 px-4 rounded-lg font-medium transition-colors ${
-                  isScrolled
-                    ? 'text-gray-700 hover:bg-gray-100'
-                    : 'text-white hover:bg-white/10'
-                }`}
+                className="block py-2 px-3 rounded-lg font-medium text-gray-800 hover:bg-accent-100 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="px-4 py-2">
+            <div className="py-2">
               <LanguageSwitcher />
             </div>
             <a
@@ -118,12 +125,12 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold"
+              className="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold mt-2"
             >
               {t.hero.cta}
             </a>
           </div>
-        )}
+        </div>
       </div>
 
       {/* Floating Contact Buttons - Right Side */}

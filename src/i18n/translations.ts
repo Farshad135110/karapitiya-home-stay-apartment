@@ -13,6 +13,7 @@ export const translations = {
       thingsToDo: 'Things to Do',
       contact: 'Contact',
       faq: 'FAQ',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'Your Home Away from Home Near Karapitiya Teaching Hospital',

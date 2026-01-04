@@ -43,7 +43,7 @@ export default function About() {
             >
               <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-24">
               <img 
-                  src="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_800,c_limit/v1764368306/exterior_y9duym.avif"
+                  src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0197_fzn0vv.jpg"
                   alt="Karapitiya Home Stay Apartment Exterior"
                   width="800"
                   height="600"

@@ -12,88 +12,100 @@ export default function Gallery() {
   const images = [
     // Bedrooms
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521587/IMG-20251129-WA0201_waugpy.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0201_mbb9xm.jpg',
       title: 'Modern Bedroom with Study Desk',
       description: 'Comfortable bedroom with modern amenities, air conditioning, and dedicated study space for medical students near Karapitiya Teaching Hospital',
       alt: 'Modern bedroom with comfortable bed, study desk, and air conditioning at Karapitiya Home Stay Apartment Galle',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521585/IMG-20251129-WA0199_iqrza3.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0199_pvfxxj.jpg',
       title: 'Cozy Private Bedroom',
       description: 'Cozy sleeping space with air conditioning and comfortable bedding for medical electives',
       alt: 'Cozy private bedroom with air conditioning and comfortable bedding at RnR Private Residence Galle',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521575/IMG-20251129-WA0212_m2hxmb.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529852/IMG-20251129-WA0209_kfhjvz.jpg',
       title: 'Spacious Study Room',
       description: 'Spacious room perfect for study and rest with natural lighting and quiet environment',
       alt: 'Spacious study room with natural lighting perfect for medical students at Karapitiya accommodation',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521569/IMG-20251129-WA0217_jepbn9.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529851/IMG-20251129-WA0212_szyeje.jpg',
       title: 'Private Bedroom with Wardrobe',
       description: 'Private bedroom with comfortable furnishing and ample storage space',
       alt: 'Private bedroom with wardrobe and comfortable furnishing at medical student accommodation Galle',
     },
-    // Hall Areas
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521581/IMG-20251129-WA0208_iie7ka.jpg',
-      title: 'Spacious Living Hall',
-      description: 'Spacious living area for relaxation and socializing with other medical students',
-      alt: 'Spacious living hall with comfortable seating at Karapitiya Home Stay Apartment',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0218_ffifpt.jpg',
+      title: 'Extra Bedroom',
+      description: 'Additional bedroom for guests or study partners',
+      alt: 'Extra bedroom at Karapitiya Home Stay Apartment',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521585/IMG-20251129-WA0203_vnuukc.jpg',
-      title: 'Comfortable Common Area',
-      description: 'Comfortable shared space for study groups and relaxation',
-      alt: 'Comfortable common area for medical students at RnR Private Residence Karapitiya',
-    },
-    // Dining Areas
-    {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521584/IMG-20251129-WA0202_wirdlo.jpg',
-      title: 'Modern Dining Area',
-      description: 'Perfect space for meals together with dining table and chairs',
-      alt: 'Modern dining area with table and chairs at Karapitiya medical student housing',
-    },
-    {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521579/IMG-20251129-WA0207_tfahug.jpg',
-      title: 'Elegant Dining Space',
-      description: 'Elegant dining space with natural lighting and comfortable seating',
-      alt: 'Elegant dining space with natural lighting at Airbnb Superhost accommodation Galle',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0217_gjqo4x.jpg',
+      title: 'Bedroom with Balcony',
+      description: 'Bedroom with access to balcony and fresh air',
+      alt: 'Bedroom with balcony at RnR Private Residence',
     },
     // Kitchen and Pantry
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521584/IMG-20251129-WA0204_ugeyup.jpg',
-      title: 'Fully Equipped Modern Kitchen',
-      description: 'Fully equipped modern kitchen with refrigerator, stove, and cooking essentials',
-      alt: 'Fully equipped modern kitchen with appliances at Karapitiya student accommodation',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767530224/WhatsApp_Image_2026-01-04_at_18.05.04_khlpy9.jpg',
+      title: 'Pantry Storage',
+      description: 'Additional pantry storage and workspace',
+      alt: 'Pantry storage and workspace at Karapitiya Home Stay Apartment',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521575/IMG-20251129-WA0215_wplpor.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767530224/WhatsApp_Image_2026-01-04_at_18.05.05_jvzz4r.jpg',
       title: 'Well-Stocked Pantry',
       description: 'Well-stocked pantry area with storage space for groceries',
       alt: 'Well-stocked pantry with storage at RnR Private Residence near Karapitiya Hospital',
     },
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521573/IMG-20251129-WA0214_z8gr9i.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767530224/WhatsApp_Image_2026-01-04_at_18.05.05_1_erccac.jpg',
+      title: 'Fully Equipped Modern Kitchen',
+      description: 'Fully equipped modern kitchen with refrigerator, stove, and cooking essentials',
+      alt: 'Fully equipped modern kitchen with appliances at Karapitiya student accommodation',
+    },
+    {
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529851/IMG-20251129-WA0214_n1pdsf.jpg',
       title: 'In-Unit Washing Machine',
       description: 'In-unit washing machine for your convenience during long stays',
       alt: 'In-unit washing machine at medical student housing near Karapitiya Teaching Hospital',
     },
     // Bathrooms
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521588/IMG-20251129-WA0198_rwtw8t.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529851/IMG-20251129-WA0216_ewv29x.jpg',
       title: 'Modern Bathroom with Hot Water',
       description: 'Clean bathroom with hot water shower and modern fixtures',
       alt: 'Modern bathroom with hot water shower at Karapitiya Home Stay Apartment Galle',
     },
     // Featured bathroom with hot water (key amenity)
     {
-      url: 'https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_80,w_700,c_limit/v1764521570/IMG-20251129-WA0216_gbvn84.jpg',
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529854/IMG-20251129-WA0198_fywfan.jpg',
       title: 'Modern Bathroom with Hot Water',
       description: 'Clean bathroom facilities with 24/7 hot water and modern fixtures',
       alt: 'Modern bathroom with 24/7 hot water at Karapitiya Home Stay Apartment Galle',
     },
+    // Rest Areas
+    {
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529852/IMG-20251129-WA0213_lbotbq.jpg',
+      title: 'Rest Area with Sofa',
+      description: 'Comfortable rest area with sofa for relaxation and reading',
+      alt: 'Rest area with sofa at Karapitiya Home Stay Apartment',
+    },
+    {
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529852/IMG-20251129-WA0208_xqd1bc.jpg',
+      title: 'Rest Area with Table',
+      description: 'Rest area with table and chairs for group study or meals',
+      alt: 'Rest area with table and chairs at Karapitiya Home Stay Apartment',
+    },
+    {
+      url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0203_tfnq2r.jpg',
+      title: 'Rest Area with TV',
+      description: 'Rest area with TV and comfortable seating for entertainment',
+      alt: 'Rest area with TV at Karapitiya Home Stay Apartment',
+    },
+
   ]
 
   return (
@@ -104,23 +116,10 @@ export default function Gallery() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div
-            className={`text-center mb-10 transform transition-all duration-700 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              {t.gallery.title}
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t.gallery.subtitle}
-            </p>
-          </div>
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {images.map((image, index) => (
+            {images.filter(image => image.url && image.url.trim() !== '').map((image, index) => (
               <div
                 key={index}
                 className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 ${
