@@ -663,9 +663,9 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.karapitiyahomestayapartment.com/" />
         
         {/* Favicon and Icons - Optimized */}
-        <link rel="icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_64,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" type="image/png" />
-        <link rel="apple-touch-icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_180,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" />
-        <link rel="shortcut icon" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_64,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" />
+        <link rel="icon" href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" />
+        <link rel="shortcut icon" href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" />
         
         {/* Geo & Location Meta Tags */}
         <meta name="geo.region" content="LK-3" />
