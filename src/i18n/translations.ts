@@ -182,6 +182,7 @@ export const translations = {
       thingsToDo: 'Aktivitäten',
       contact: 'Kontakt',
       faq: 'FAQ',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'Ihr Zuhause in der Nähe des Karapitiya Teaching Hospital',
@@ -350,6 +351,7 @@ export const translations = {
       thingsToDo: 'Activités',
       contact: 'Contact',
       faq: 'FAQ',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'Votre Chez-Vous Près de l\'Hôpital Universitaire de Karapitiya',
@@ -518,6 +520,7 @@ export const translations = {
       thingsToDo: 'Actividades',
       contact: 'Contacto',
       faq: 'Preguntas',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'Tu Hogar Cerca del Hospital Universitario de Karapitiya',
@@ -686,6 +689,7 @@ export const translations = {
       thingsToDo: 'Attività',
       contact: 'Contatti',
       faq: 'FAQ',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'La Tua Casa Vicino all\'Ospedale Universitario di Karapitiya',
@@ -854,6 +858,7 @@ export const translations = {
       thingsToDo: 'Activiteiten',
       contact: 'Contact',
       faq: 'FAQ',
+      subtitle: 'Karapitiya Home Stay Apartment',
     },
     hero: {
       title: 'Uw Thuis Bij het Karapitiya Teaching Hospital',
