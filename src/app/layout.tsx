@@ -648,7 +648,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         {/* Preload Critical LCP Images */}
-        <link rel="preload" as="image" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" fetchpriority="high" />
+        <link rel="preload" as="image" href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png" fetchPriority="high" />
         
         {/* Preconnect for Performance - Critical Origins */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
