@@ -29,9 +29,9 @@ export default function Hero() {
             }`}
           >
             <img 
-              src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg" 
+              src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg"
               alt="RnR Private Residence Logo"
-              fetchpriority="high"
+              fetchPriority="high"
               width="128"
               height="128"
               className="w-24 h-24 md:w-32 md:h-32 object-contain rounded-2xl"
