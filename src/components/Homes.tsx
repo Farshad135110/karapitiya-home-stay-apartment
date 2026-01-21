@@ -1,27 +1,29 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { ExternalLink, Users, Home, MapPin } from 'lucide-react'
+import { useState } from "react";
+import { ExternalLink, Users, Home, MapPin } from "lucide-react";
 
 export default function Homes() {
-  const [isVisible] = useState(true)
+  const [isVisible] = useState(true);
 
   const homes = [
     {
-      title: 'Modern Apartment in Galle',
-      url: 'https://www.airbnb.com/rooms/1297705979521687357',
-      image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529854/exterior_tn8eep.avif',
-      description: 'Perfect for travelers and long-stay guests',
-      features: ['2 Guests', 'Central Location', 'Fully Equipped']
+      title: "Modern Apartment in Galle",
+      url: "https://www.airbnb.com/rooms/1297705979521687357",
+      image:
+        "https://res.cloudinary.com/dokpye7fu/image/upload/v1767529854/exterior_tn8eep.avif",
+      description: "Perfect for travelers and long-stay guests",
+      features: ["2 Guests", "Central Location", "Fully Equipped"],
     },
     {
-      title: 'RnR Private Residence',
-      url: 'https://www.airbnb.com/rooms/830788991042580081',
-      image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0219_fjidee.jpg',
-      description: 'Perfect for families and work-from-home professionals',
-      features: ['2 Guests', 'Quiet Area', 'Fully Equipped']
-    }
-  ]
+      title: "RnR Private Residence",
+      url: "https://www.airbnb.com/rooms/830788991042580081",
+      image:
+        "https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0219_fjidee.jpg",
+      description: "Perfect for families and work-from-home professionals",
+      features: ["2 Guests", "Quiet Area", "Fully Equipped"],
+    },
+  ];
 
   return (
     <section
@@ -32,7 +34,7 @@ export default function Homes() {
         {/* Section Header */}
         <div
           className={`text-center mb-12 transform transition-all duration-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-600 px-4 py-2 rounded-full mb-4">
@@ -56,7 +58,9 @@ export default function Homes() {
               target="_blank"
               rel="noopener noreferrer"
               className={`group block bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
@@ -68,21 +72,21 @@ export default function Homes() {
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Airbnb Logo Overlay */}
                 <div className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" 
-                    alt="Airbnb" 
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
+                    alt="Airbnb"
                     className="w-16 h-4"
                   />
                 </div>
 
                 {/* Superhost Badge Overlay */}
                 <div className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
-                  <img 
-                    src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_1_jrrqhp.png" 
-                    alt="Superhost" 
+                  <img
+                    src="https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/CITYPNG.COM_HD_Airbnb_Superhost_Badge_Logo_PNG_Image_-_1500x1500_1_jrrqhp.png"
+                    alt="Superhost"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
@@ -101,9 +105,7 @@ export default function Homes() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {home.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  {home.description}
-                </p>
+                <p className="text-gray-600 mb-4">{home.description}</p>
 
                 {/* Features */}
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -134,5 +136,5 @@ export default function Homes() {
         </div>
       </div>
     </section>
-  )
+  );
 }

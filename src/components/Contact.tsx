@@ -1,113 +1,128 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Mail, Send, Clock, MessageCircle, Heart, MessageSquare } from 'lucide-react'
-import { useLanguage } from '@/i18n/LanguageContext'
-import { sanitizeFormData, checkSubmissionRateLimit, type ContactFormData } from '@/lib/security'
-import { createWhatsAppLink, openURLSafely } from '@/lib/secureLinks'
+import { useState } from "react";
+import {
+  Mail,
+  Send,
+  Clock,
+  MessageCircle,
+  Heart,
+  MessageSquare,
+} from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import {
+  sanitizeFormData,
+  checkSubmissionRateLimit,
+  type ContactFormData,
+} from "@/lib/security";
+import { createWhatsAppLink, openURLSafely } from "@/lib/secureLinks";
 
 export default function Contact() {
-  const { t } = useLanguage()
-  const [isVisible] = useState(true)
+  const { t } = useLanguage();
+  const [isVisible] = useState(true);
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+    name: "",
+    email: "",
+    phone: "",
+    checkIn: "",
+    checkOut: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (isSubmitting) return
-    
+    e.preventDefault();
+
+    if (isSubmitting) return;
+
     // Check rate limiting
-    const rateLimitCheck = checkSubmissionRateLimit('contact-form', 3, 60000)
+    const rateLimitCheck = checkSubmissionRateLimit("contact-form", 3, 60000);
     if (!rateLimitCheck.allowed) {
-      alert(`Too many submissions. Please wait ${rateLimitCheck.retryAfter} seconds before trying again.`)
-      return
+      alert(
+        `Too many submissions. Please wait ${rateLimitCheck.retryAfter} seconds before trying again.`,
+      );
+      return;
     }
-    
+
     // Sanitize and validate form data
-    const { sanitized, errors } = sanitizeFormData(formData)
-    
+    const { sanitized, errors } = sanitizeFormData(formData);
+
     if (errors.length > 0) {
-      alert('Please fix the following errors:\n' + errors.join('\n'))
-      return
+      alert("Please fix the following errors:\n" + errors.join("\n"));
+      return;
     }
-    
-    setIsSubmitting(true)
-    
+
+    setIsSubmitting(true);
+
     try {
       // Create WhatsApp message with sanitized data
-      const message = `Hello! I'm interested in booking your property.\n\nName: ${sanitized.name}\nEmail: ${sanitized.email}\nPhone: ${sanitized.phone}\nCheck-in: ${sanitized.checkIn}\nCheck-out: ${sanitized.checkOut}\n\nMessage: ${sanitized.message}`
-      
-      const whatsappUrl = createWhatsAppLink('94759597703', message)
-      
+      const message = `Hello! I'm interested in booking your property.\n\nName: ${sanitized.name}\nEmail: ${sanitized.email}\nPhone: ${sanitized.phone}\nCheck-in: ${sanitized.checkIn}\nCheck-out: ${sanitized.checkOut}\n\nMessage: ${sanitized.message}`;
+
+      const whatsappUrl = createWhatsAppLink("94759597703", message);
+
       if (!whatsappUrl) {
-        alert('Unable to create WhatsApp link. Please try again.')
-        return
+        alert("Unable to create WhatsApp link. Please try again.");
+        return;
       }
-      
-      openURLSafely(whatsappUrl)
-      
+
+      openURLSafely(whatsappUrl);
+
       // Reset form
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        checkIn: '',
-        checkOut: '',
-        message: '',
-      })
+        name: "",
+        email: "",
+        phone: "",
+        checkIn: "",
+        checkOut: "",
+        message: "",
+      });
     } catch (error) {
-      console.error('Error submitting form:', error)
-      alert('An error occurred. Please try again.')
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+
     // Limit input length
     const maxLengths: Record<string, number> = {
       name: 100,
       email: 254,
       phone: 20,
       message: 1000,
-    }
-    
+    };
+
     if (maxLengths[name] && value.length > maxLengths[name]) {
-      return
+      return;
     }
-    
+
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const contactInfo = [
     {
       icon: MessageSquare,
-      title: 'WhatsApp',
-      content: '+94 75 959 7703',
-      link: 'https://wa.me/94759597703',
-      color: 'from-emerald-500 to-emerald-600',
+      title: "WhatsApp",
+      content: "+94 75 959 7703",
+      link: "https://wa.me/94759597703",
+      color: "from-emerald-500 to-emerald-600",
     },
     {
       icon: Mail,
-      title: 'Email',
-      content: 'rnr.residance@gmail.com',
-      link: 'mailto:rnr.residance@gmail.com',
-      color: 'from-blue-500 to-blue-600',
+      title: "Email",
+      content: "rnr.residance@gmail.com",
+      link: "mailto:rnr.residance@gmail.com",
+      color: "from-blue-500 to-blue-600",
     },
-  ]
+  ];
 
   return (
     <section
@@ -119,7 +134,9 @@ export default function Contact() {
           {/* Section Header */}
           <div
             className={`text-center mb-10 transform transition-all duration-700 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
             }`}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -134,19 +151,25 @@ export default function Contact() {
           {/* Contact Info Cards */}
           <div
             className={`grid md:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto transform transition-all duration-700 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
             }`}
           >
             {contactInfo.map((info, index) => {
-              const Icon = info.icon
+              const Icon = info.icon;
               return (
                 <a
                   key={index}
-                  href={info.link || '#'}
-                  target={info.link?.startsWith('http') ? '_blank' : undefined}
-                  rel={info.link?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  href={info.link || "#"}
+                  target={info.link?.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    info.link?.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 ${
-                    !info.link ? 'pointer-events-none' : ''
+                    !info.link ? "pointer-events-none" : ""
                   }`}
                 >
                   <div
@@ -159,7 +182,7 @@ export default function Contact() {
                   </h3>
                   <p className="text-gray-600 text-sm">{info.content}</p>
                 </a>
-              )
+              );
             })}
           </div>
 
@@ -167,7 +190,9 @@ export default function Contact() {
             {/* Contact Form - Takes 2 columns */}
             <div
               className={`lg:col-span-2 xl:col-span-3 transform transition-all duration-700 delay-200 ${
-                isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-8 opacity-0"
               }`}
             >
               <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-100">
@@ -230,7 +255,10 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="checkIn" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label
+                        htmlFor="checkIn"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
                         {t.contact.form.checkin}
                       </label>
                       <input
@@ -243,7 +271,10 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="checkOut" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label
+                        htmlFor="checkOut"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
                         {t.contact.form.checkout}
                       </label>
                       <input
@@ -286,7 +317,9 @@ export default function Contact() {
             {/* Right Side - Takes 3 columns */}
             <div
               className={`lg:col-span-3 xl:col-span-4 transform transition-all duration-700 delay-300 ${
-                isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-8 opacity-0"
               }`}
             >
               {/* Important Information */}
@@ -295,9 +328,11 @@ export default function Contact() {
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">{t.contact.important.title}</h3>
+                  <h3 className="text-2xl font-bold">
+                    {t.contact.important.title}
+                  </h3>
                 </div>
-                
+
                 <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4">
                   {[
                     t.contact.important.minimum,
@@ -322,7 +357,9 @@ export default function Contact() {
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                      <span className="text-white/95 text-base leading-relaxed">{tip}</span>
+                      <span className="text-white/95 text-base leading-relaxed">
+                        {tip}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -331,15 +368,21 @@ export default function Contact() {
               {/* Google Maps and Business Profile */}
               <div className="mt-6 bg-white rounded-3xl p-6 shadow-2xl border border-gray-100 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{t.contact.map.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {t.contact.map.title}
+                  </h3>
                   <a
                     href="https://maps.app.goo.gl/E56scrpnyqkK3jAMA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
                   >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                     <span>{t.contact.map.button}</span>
                   </a>
@@ -349,7 +392,7 @@ export default function Contact() {
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3967.627132700873!2d80.220608!3d6.045787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173cd207ad093%3A0x1507a8b4dca65985!2sRnR%20Private%20Residence!5e0!3m2!1sen!2slk!4v1768734041893!5m2!1sen!2slk"
                     width="100%"
                     height="100%"
-                    style={{ border: 0, minHeight: '400px' }}
+                    style={{ border: 0, minHeight: "400px" }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -358,7 +401,9 @@ export default function Contact() {
                 </div>
                 <div className="mt-4 text-center">
                   <p className="text-gray-600 text-sm font-medium">
-                    <span className="font-bold text-primary-600">RnR Private Residence</span>
+                    <span className="font-bold text-primary-600">
+                      RnR Private Residence
+                    </span>
                     <br />
                     {t.contact.map.description}
                   </p>
@@ -369,5 +414,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
