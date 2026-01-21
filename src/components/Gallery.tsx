@@ -14,26 +14,26 @@ export default function Gallery() {
     {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0201_mbb9xm.jpg',
       title: 'Modern Bedroom with Study Desk',
-      description: 'Comfortable bedroom with modern amenities, air conditioning, and dedicated study space for medical students near Karapitiya Teaching Hospital',
+      description: 'Comfortable bedroom with modern amenities, air conditioning, and dedicated workspace for productivity',
       alt: 'Modern bedroom with comfortable bed, study desk, and air conditioning at Karapitiya Home Stay Apartment Galle',
     },
     {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529853/IMG-20251129-WA0199_pvfxxj.jpg',
       title: 'Cozy Private Bedroom',
-      description: 'Cozy sleeping space with air conditioning and comfortable bedding for medical electives',
+      description: 'Cozy sleeping space with air conditioning and comfortable bedding for restful nights',
       alt: 'Cozy private bedroom with air conditioning and comfortable bedding at RnR Private Residence Galle',
     },
     {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529852/IMG-20251129-WA0209_kfhjvz.jpg',
       title: 'Spacious Study Room',
       description: 'Spacious room perfect for study and rest with natural lighting and quiet environment',
-      alt: 'Spacious study room with natural lighting perfect for medical students at Karapitiya accommodation',
+      alt: 'Spacious study room with natural lighting perfect for work or study at Karapitiya accommodation',
     },
     {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529851/IMG-20251129-WA0212_szyeje.jpg',
       title: 'Private Bedroom with Wardrobe',
       description: 'Private bedroom with comfortable furnishing and ample storage space',
-      alt: 'Private bedroom with wardrobe and comfortable furnishing at medical student accommodation Galle',
+      alt: 'Private bedroom with wardrobe and comfortable furnishing at long-stay accommodation Galle',
     },
     {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0218_ffifpt.jpg',
@@ -70,7 +70,7 @@ export default function Gallery() {
       url: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529851/IMG-20251129-WA0214_n1pdsf.jpg',
       title: 'In-Unit Washing Machine',
       description: 'In-unit washing machine for your convenience during long stays',
-      alt: 'In-unit washing machine at medical student housing near Karapitiya Teaching Hospital',
+      alt: 'In-unit washing machine at long-stay housing near Karapitiya, Galle',
     },
     // Bathrooms
     {

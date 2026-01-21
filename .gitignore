@@ -4,9 +4,32 @@ node_modules
 *.log
 .env
 .env.local
+.env.development
+.env.production
 .env.production.local
 .vercel
 out
 dist
 build
 .turbo
+
+# Security files
+*.key
+*.cert
+*.crt
+*.pem
+secrets/
+*.pfx
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo

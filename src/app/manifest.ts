@@ -2,7 +2,7 @@ export default function manifest() {
   return {
     name: 'Karapitiya Home Stay Apartment',
     short_name: 'Karapitiya Stay',
-    description: '5★ Airbnb Superhost accommodation for medical students near Karapitiya Teaching Hospital, Galle, Sri Lanka',
+    description: '5★ Airbnb Superhost accommodation in Galle, Sri Lanka - Perfect for travelers, families, students, and professionals',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
@@ -22,7 +22,7 @@ export default function manifest() {
         purpose: 'any maskable',
       },
     ],
-    categories: ['accommodation', 'hospitality', 'lodging', 'student housing'],
+    categories: ['accommodation', 'hospitality', 'lodging', 'vacation rentals', 'long-stay'],
     lang: 'en-US',
     dir: 'ltr',
     scope: '/',

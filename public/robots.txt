@@ -1,4 +1,33 @@
+# Robots.txt - Karapitiya Homestay
+# Security: Disallow crawling of sensitive paths
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /*.json$
+
+# Prevent scraping bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# Block malicious bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: BlexBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
 
 Sitemap: https://www.karapitiyahomestayapartment.com/sitemap.xml

@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "security:audit": "npm audit",
+    "security:audit:fix": "npm audit fix",
+    "security:check": "npm outdated && npm audit",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "critters": "^0.0.23",
@@ -23,7 +27,7 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.18",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^16.0.5",
+    "eslint-config-next": "16.1.4",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"

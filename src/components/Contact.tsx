@@ -3,11 +3,13 @@
 import { useState } from 'react'
 import { Mail, Send, Clock, MessageCircle, Heart, MessageSquare } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { sanitizeFormData, checkSubmissionRateLimit, type ContactFormData } from '@/lib/security'
+import { createWhatsAppLink, openURLSafely } from '@/lib/secureLinks'
 
 export default function Contact() {
   const { t } = useLanguage()
   const [isVisible] = useState(true)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
@@ -15,62 +17,78 @@ export default function Contact() {
     checkOut: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Validate phone number (digits only)
-    if (formData.phone && !/^\+?[0-9\s-]+$/.test(formData.phone)) {
-      alert('Please enter a valid phone number (numbers only)')
+    if (isSubmitting) return
+    
+    // Check rate limiting
+    const rateLimitCheck = checkSubmissionRateLimit('contact-form', 3, 60000)
+    if (!rateLimitCheck.allowed) {
+      alert(`Too many submissions. Please wait ${rateLimitCheck.retryAfter} seconds before trying again.`)
       return
     }
     
-    // Validate dates
-    if (formData.checkIn && formData.checkOut) {
-      const checkIn = new Date(formData.checkIn)
-      const checkOut = new Date(formData.checkOut)
-      const today = new Date()
-      today.setHours(0, 0, 0, 0)
-      
-      if (checkIn < today) {
-        alert('Check-in date cannot be in the past')
-        return
-      }
-      
-      if (checkOut <= checkIn) {
-        alert('Check-out date must be after check-in date')
-        return
-      }
-      
-      // Calculate minimum stay (14 days)
-      const daysDiff = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24))
-      if (daysDiff < 14) {
-        alert('Minimum stay is 14 days. Please adjust your dates.')
-        return
-      }
+    // Sanitize and validate form data
+    const { sanitized, errors } = sanitizeFormData(formData)
+    
+    if (errors.length > 0) {
+      alert('Please fix the following errors:\n' + errors.join('\n'))
+      return
     }
     
-    // Create WhatsApp message with form data
-    const message = `Hello! I'm interested in booking your property.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\n\nMessage: ${formData.message}`
+    setIsSubmitting(true)
     
-    const whatsappUrl = `https://wa.me/94759597703?text=${encodeURIComponent(message)}`
-    window.open(whatsappUrl, '_blank')
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      checkIn: '',
-      checkOut: '',
-      message: '',
-    })
+    try {
+      // Create WhatsApp message with sanitized data
+      const message = `Hello! I'm interested in booking your property.\n\nName: ${sanitized.name}\nEmail: ${sanitized.email}\nPhone: ${sanitized.phone}\nCheck-in: ${sanitized.checkIn}\nCheck-out: ${sanitized.checkOut}\n\nMessage: ${sanitized.message}`
+      
+      const whatsappUrl = createWhatsAppLink('94759597703', message)
+      
+      if (!whatsappUrl) {
+        alert('Unable to create WhatsApp link. Please try again.')
+        return
+      }
+      
+      openURLSafely(whatsappUrl)
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        checkIn: '',
+        checkOut: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('An error occurred. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    
+    // Limit input length
+    const maxLengths: Record<string, number> = {
+      name: 100,
+      email: 254,
+      phone: 20,
+      message: 1000,
+    }
+    
+    if (maxLengths[name] && value.length > maxLengths[name]) {
+      return
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     })
   }
 
@@ -315,7 +333,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{t.contact.map.title}</h3>
                   <a
-                    href="https://www.google.com/maps/place/RnR+Private+Residence/@6.045787,80.220608,17z/data=!4m6!3m5!1s0x3ae173cd207ad093:0x1507a8b4dca65985!8m2!3d6.045787!4d80.2206082!16s%2Fg%2F11vhvq7nnq?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
+                    href="https://maps.app.goo.gl/E56scrpnyqkK3jAMA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
@@ -328,7 +346,7 @@ export default function Contact() {
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg flex-1">
                   <iframe
-                    src="https://maps.google.com/maps?q=RnR+Private+Residence+Karapitiya+Galle&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3967.627132700873!2d80.220608!3d6.045787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173cd207ad093%3A0x1507a8b4dca65985!2sRnR%20Private%20Residence!5e0!3m2!1sen!2slk!4v1768734041893!5m2!1sen!2slk"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: '400px' }}

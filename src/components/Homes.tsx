@@ -8,18 +8,18 @@ export default function Homes() {
 
   const homes = [
     {
-      title: 'Apartment for Medical Electives Students - Galle',
+      title: 'Modern Apartment in Galle',
       url: 'https://www.airbnb.com/rooms/1297705979521687357',
       image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529854/exterior_tn8eep.avif',
-      description: 'Perfect for medical students on electives',
-      features: ['2 Guests', 'Near Hospital', 'Fully Equipped']
+      description: 'Perfect for travelers and long-stay guests',
+      features: ['2 Guests', 'Central Location', 'Fully Equipped']
     },
     {
       title: 'RnR Private Residence',
       url: 'https://www.airbnb.com/rooms/830788991042580081',
       image: 'https://res.cloudinary.com/dokpye7fu/image/upload/v1767529850/IMG-20251129-WA0219_fjidee.jpg',
-      description: 'Perfect for medical students on electives',
-      features: ['2 Guests', 'Near Hospital', 'Fully Equipped']
+      description: 'Perfect for families and work-from-home professionals',
+      features: ['2 Guests', 'Quiet Area', 'Fully Equipped']
     }
   ]
 

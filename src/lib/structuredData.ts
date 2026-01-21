@@ -100,18 +100,18 @@ export const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is the best accommodation for medical elective students near Karapitiya Teaching Hospital?',
+      name: 'What type of accommodation is RnR Residence in Galle?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'RnR Residence offers fully furnished long-stay rooms just 5 minutes from Karapitiya Hospital, designed specifically for medical elective students and researchers. Study-friendly environment with high-speed WiFi, quiet rooms, and walking distance to hospital.',
+        text: 'RnR Residence offers fully furnished long-stay apartments perfect for travelers, families, students, professionals, and vacationers. Modern facilities with high-speed WiFi, quiet environment, and convenient location near beaches, city center, and essential services.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How far is RnR Residence from Karapitiya Hospital?',
+      name: 'Where is RnR Residence located in Galle?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Only 5 minutes by tuk-tuk and easily accessible from the main road, supermarkets, and bus stand. Walking distance for medical students attending Karapitiya Teaching Hospital.',
+        text: 'Conveniently located in Karapitiya area, just 10 minutes from Galle city center and beaches. Easily accessible from the main road, supermarkets, restaurants, and bus stand. Close to Karapitiya Teaching Hospital and major attractions.',
       },
     },
     {
@@ -124,10 +124,10 @@ export const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Do you have fast Wi-Fi for study and work?',
+      name: 'Do you have fast Wi-Fi for remote work and study?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, high-speed fiber WiFi is available in all rooms, perfect for medical research, online lectures, telemedicine, and video calls. Study-friendly work desks in every room.',
+        text: 'Yes, high-speed fiber WiFi is available in all rooms, perfect for remote work, online meetings, streaming, and study. Dedicated workspaces in every room for productivity.',
       },
     },
     {
@@ -140,10 +140,10 @@ export const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Do you accept overseas medical students and researchers?',
+      name: 'Do you accept international guests and long-stay travelers?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, we specialize in hosting international medical elective students, visiting faculty, researchers, and long-stay foreign guests. We have extensive experience with medical students from USA, UK, Australia, Europe, and Middle East.',
+        text: 'Yes, we welcome international travelers, families, students (including medical electives), researchers, remote workers, and vacationers. We have extensive experience hosting guests from USA, UK, Australia, Europe, Middle East, and Asia.',
       },
     },
   ],

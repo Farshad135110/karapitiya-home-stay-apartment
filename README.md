@@ -120,6 +120,36 @@ Modify `tailwind.config.js` to change the color scheme.
 - Minimal dependencies for fast load times
 - Server-side rendering for better SEO
 
+## Security
+
+This project implements comprehensive security measures to protect against common web vulnerabilities. See [SECURITY.md](SECURITY.md) for detailed information.
+
+### Key Security Features
+
+- ✅ **HTTP Security Headers**: CSP, HSTS, X-Frame-Options, and more
+- ✅ **Rate Limiting**: Protection against brute force and spam attacks
+- ✅ **Input Validation**: Sanitization of all user inputs
+- ✅ **XSS Protection**: Multiple layers of protection against cross-site scripting
+- ✅ **HTTPS Enforcement**: Automatic redirect to secure connections
+- ✅ **Secure Links**: All external links use noopener and noreferrer
+
+### Security Scripts
+
+```powershell
+# Check for security vulnerabilities
+npm run security:audit
+
+# Fix security vulnerabilities
+npm run security:audit:fix
+
+# Check outdated packages and vulnerabilities
+npm run security:check
+```
+
+### Security Checklist
+
+Before deploying to production, review [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md) to ensure all security measures are properly configured.
+
 ## License
 
 All rights reserved © 2025 Karapitiya Home Stay Apartment
