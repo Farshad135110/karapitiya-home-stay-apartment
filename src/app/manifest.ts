@@ -11,15 +11,15 @@ export default function manifest() {
     orientation: "portrait-primary",
     icons: [
       {
-        src: "https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png",
+        src: "https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg",
         sizes: "192x192",
-        type: "image/png",
+        type: "image/jpeg",
         purpose: "any maskable",
       },
       {
-        src: "https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png",
+        src: "https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg",
         sizes: "512x512",
-        type: "image/png",
+        type: "image/jpeg",
         purpose: "any maskable",
       },
     ],

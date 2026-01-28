@@ -11,7 +11,7 @@ export const organizationSchema = {
     "Long-Stay Apartments Galle",
   ],
   url: "https://www.karapitiyahomestayapartment.com",
-  logo: "https://res.cloudinary.com/dhfqwxyb4/image/upload/v1764368260/Untitled_design_15_hwkj0c.png",
+  logo: "https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg",
   description:
     "RnR Residence is a fully furnished long-stay homestay and apartment residence located in the heart of Galle, just 5 minutes from Karapitiya Teaching Hospital. We specialize in hosting overseas medical elective students, visiting faculty, researchers, and long-stay travelers seeking a quiet, safe, and private place to stay.",
   slogan: "Your Home in Galle — Just 5 Minutes from Karapitiya Hospital",

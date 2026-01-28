@@ -18,19 +18,18 @@ const poppins = Poppins({
 });
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0ea5e9' },
-    { media: '(prefers-color-scheme: dark)', color: '#0c4a6e' },
+    { media: "(prefers-color-scheme: light)", color: "#0ea5e9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c4a6e" },
   ],
 };
 
 export const metadata: Metadata = {
-  title:
-    "RnR Residence | Premium Accommodation & Long-Stay Apartments in Galle, Sri Lanka",
+  title: "RnR Private Residence",
   description:
     "RnR Residence offers fully furnished long-stay apartments in Galle, perfect for travelers, families, students, and professionals. Modern facilities, high-speed WiFi, convenient location near beaches, city center, and major attractions. 5★ Airbnb Superhost.",
   authors: [{ name: "RnR Family Residence" }],
@@ -468,7 +467,7 @@ export default function RootLayout({
         url: "https://www.karapitiyahomestayapartment.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_512,h_512,c_fit/v1764368260/Untitled_design_15_hwkj0c.png",
+          url: "https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg",
           width: 512,
           height: 512,
           caption:
@@ -476,7 +475,7 @@ export default function RootLayout({
         },
         image: {
           "@type": "ImageObject",
-          url: "https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_512,h_512,c_fit/v1764368260/Untitled_design_15_hwkj0c.png",
+          url: "https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg",
           width: 512,
           height: 512,
         },
@@ -757,7 +756,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="https://res.cloudinary.com/dhfqwxyb4/image/upload/f_auto,q_auto,w_128,c_limit/v1764368260/Untitled_design_15_hwkj0c.png"
+          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg"
           fetchPriority="high"
         />
 
@@ -783,16 +782,16 @@ export default function RootLayout({
         {/* Favicon and Icons - Optimized */}
         <link
           rel="icon"
-          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg"
+          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg"
           type="image/jpeg"
         />
         <link
           rel="apple-touch-icon"
-          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg"
+          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg"
         />
         <link
           rel="shortcut icon"
-          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1767530935/a-professional-logo-design-featuring-the_5gZ7iDYxS-erpmt7dPQlNg_9INFVxWqS-S3eZYvESkJMQ_v91rs2.jpg"
+          href="https://res.cloudinary.com/dokpye7fu/image/upload/v1769532272/a-modern-logo-design-featuring-the-elega_FIS1hqn2Q3O9NVIE91Pddw_df5pGb6SRIyiymvL62iPGA_ygq8sx.jpg"
         />
 
         {/* Geo & Location Meta Tags */}
